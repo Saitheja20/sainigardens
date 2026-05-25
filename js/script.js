@@ -85,6 +85,12 @@
     ".stat-card",
     ".contact-card",
     ".contact-form-card",
+    ".image-panel",
+    ".feature-list__item",
+    ".event-category-card",
+    ".process-card",
+    ".faq-card",
+    ".visit-card",
   ];
 
   revealTargets.forEach((selector) => {
