@@ -1,1513 +1,533 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="description"
-			content="Saini Gardens — A premier wedding and events destination in Hanamkonda with luxurious venues, gardens, and full-service hospitality."
-		/>
-		<title>Saini Gardens — A Legacy of Celebrations</title>
-
-		<!-- Preconnects for faster font loading -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-		<!-- Distinctive Typography: Cormorant Garamond (editorial serif) + Jost (refined sans) -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-
-		<!-- Bootstrap 5 -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
-
-		<!-- Bootstrap Icons -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-		/>
-
-		<!-- Main Stylesheet -->
-		<link rel="stylesheet" href="css/style.css" />
-		<style>
-			/* Keep image full width */
-			.carousel {
-				position: relative;
-			}
-
-			.carousel-item img {
-				width: 100%;
-				height: 500px; /* adjust as needed */
-				object-fit: cover;
-			}
-
-			/* Place indicators INSIDE image at bottom */
-			.custom-indicators {
-				position: absolute;
-				bottom: 15px !important;
-				left: 50% !important;
-				transform: translateX(-50%);
-				margin: 0;
-				z-index: 2;
-			}
-
-			/* Indicator buttons */
-			.custom-indicators button {
-				width: 35px !important;
-				height: 5px !important;
-				border: none !important;
-				border-radius: 10px;
-				margin: 0 5px !important;
-				background-color: white !important;
-				opacity: 0.7;
-			}
-
-			/* Active indicator */
-			.custom-indicators .active {
-				background-color: #ff6b2c !important;
-				opacity: 1;
-			}
-
-			.event-box{
-    background: #fff;
-    border-radius: 18px;
-    overflow: hidden;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.event-box img{
-    width: 100%;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-}
-
-.event-btn{
-    width: 100%;
-    margin-top: 12px;
-    border: none;
-    background: #f26522;
-    color: #fff;
-    font-size: 28px;
-    font-weight: 500;
-    padding: 14px 20px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.event-btn:hover{
-    background: #d94f12;
-}
-
-@media(max-width:768px){
-    .event-box img{
-        height: 260px;
-    }
-
-    .event-btn{
-        font-size: 22px;
-    }
-}
-
-
-
-
-
-/* amenties and videos ection styles */
-
-
-/* ======================================================
-   AMENITIES + VIDEO COMBINED SECTION
-====================================================== */
-
-.amenities-video-section{
-    background: #001969;
-    padding: 70px 0 140px;
-    position: relative;
-}
-
-.amenities-title{
-    color: #fff;
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Amenities */
-
-.amenity-grid{
-    margin-bottom: 70px;
-}
-
-.amenity-card-simple{
-    text-align: center;
-    color: #fff;
-    transition: 0.3s ease;
-}
-
-.amenity-card-simple h3{
-    font-size: 18px;
-    line-height: 1.5;
-    color: #fff;
-    margin-top: 18px;
-    font-weight: 500;
-}
-
-.amenity-icon{
-    width: 90px;
-    height: 90px;
-    margin: auto;
-    border: 1px solid rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    position: relative;
-}
-
-.amenity-icon i{
-    font-size: 42px;
-    color: #f4c15d;
-}
-
-/* Video */
-
-.video-wrapper{
-    position: relative;
-    margin-bottom: -220px;
-    z-index: 5;
-	border-left: 5px solid white;
-    border-top: 5px solid white;
-    border-right: 5px solid white;
-}
-
-.video-frame-custom{
-    position: relative;
-    border-radius: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.video-frame-custom img{
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    display: block;
-}
-
-.play-btn{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90px;
-    height: 90px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.play-btn i{
-    font-size: 42px;
-    color: #001969;
-    margin-left: 5px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-    .amenities-video-section{
-        padding: 60px 0 100px;
-    }
-
-    .amenities-title{
-        font-size: 32px;
-    }
-
-    .amenity-grid{
-        row-gap: 30px;
-    }
-
-    .video-wrapper{
-        margin-bottom: -140px;
-    }
-
-    .video-frame-custom img{
-        height: 280px;
-    }
-
-    .play-btn{
-        width: 70px;
-        height: 70px;
-    }
-
-    .play-btn i{
-        font-size: 32px;
-    }
-}
-		</style>
-
-		
-	</head>
-	<body>
-		<!-- ================= TOP BAR ================= -->
-		<div class="top-bar">
-			<div
-				class="container-xxl d-flex justify-content-between align-items-center flex-wrap"
-			>
-				<span class="top-bar__welcome"
-					>Welcome to Saini Gardens — Where moments become memories.</span
-				>
-				<div class="top-bar__contact">
-					<a href="tel:+919876543210"
-						><i class="bi bi-telephone-fill"></i> +91 98765 43210</a
-					>
-					<span class="divider">|</span>
-					<a href="tel:+919876543210"
-						><i class="bi bi-telephone-fill"></i> +91 98765 43210</a
-					>
-					<span class="divider">|</span>
-					<a href="mailto:sainigardens@gmail.com"
-						><i class="bi bi-envelope-fill"></i> sainigardens@gmail.com</a
-					>
-				</div>
-			</div>
-		</div>
-
-		<!-- ================= NAVBAR ================= -->
-		<nav class="navbar navbar-expand-lg site-nav" id="siteNav">
-			<div class="container-xxl">
-				<a class="navbar-brand" href="#home">
-					<div class="brand-mark">
-						<!-- <span class="brand-mark__crown">
-							<svg
-								viewBox="0 0 40 28"
-								xmlns="http://www.w3.org/2000/svg"
-								aria-hidden="true"
-							>
-								<path
-									d="M4 22 L8 8 L14 18 L20 6 L26 18 L32 8 L36 22 Z"
-									fill="currentColor"
-									opacity="0.95"
-								/>
-								<circle cx="8" cy="8" r="1.8" fill="currentColor" />
-								<circle cx="20" cy="6" r="2" fill="currentColor" />
-								<circle cx="32" cy="8" r="1.8" fill="currentColor" />
-							</svg>
-						</span>
-						<div class="brand-mark__text">
-							<span class="brand-mark__name">Saini</span>
-							<span class="brand-mark__sub">GARDENS</span>
-						</div> -->
-
-
-						<img src="images/LOGO.png" alt="Logo" class="brand-mark__logo" / width="100px" heigh
-					t="50px">
-					</div>
-				</a>
-
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#mainNav"
-					aria-controls="mainNav"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="toggler-bar"></span>
-					<span class="toggler-bar"></span>
-					<span class="toggler-bar"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="mainNav">
-					<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" href="#home">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#about">About</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#amenities">Services</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#booking">Booking</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#gallery">Gallery</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#contact">Contact</a>
-						</li>
-					</ul>
-					<a href="#booking" class="btn btn-book">
-						<span>Book Now</span>
-						<i class="bi bi-arrow-up-right"></i>
-					</a>
-				</div>
-			</div>
-		</nav>
-
-		<!-- ================= HERO ================= -->
-		<header class="herosss" id="home">
-			<div
-				id="carouselExample"
-				class="carousel slide"
-				data-bs-ride="carousel"
-				data-bs-interval="3000"
-				data-bs-wrap="true"
-			>
-				<!-- Bottom indicators -->
-				<div class="carousel-indicators custom-indicators">
-					<button
-						type="button"
-						data-bs-target="#carouselExample"
-						data-bs-slide-to="0"
-						class="active"
-						aria-current="true"
-					></button>
-
-					<button
-						type="button"
-						data-bs-target="#carouselExample"
-						data-bs-slide-to="1"
-					></button>
-
-					<button
-						type="button"
-						data-bs-target="#carouselExample"
-						data-bs-slide-to="2"
-					></button>
-				</div>
-
-				<!-- Slides -->
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img
-							src="images/garden-carousel-1.png"
-							class="d-block w-100"
-							alt=""
-						/>
-					</div>
-
-					<div class="carousel-item">
-						<img
-							src="images/garden-carousel-2.png"
-							class="d-block w-100"
-							alt=""
-						/>
-					</div>
-
-					<div class="carousel-item">
-						<img
-							src="images/garden-carousel-3.png"
-							class="d-block w-100"
-							alt=""
-						/>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<!-- ================= ABOUT ================= -->
-		<section class="section about" id="about">
-			<div class="container-xxl">
-				<div class="row g-5 align-items-center">
-					<div class="col-lg-6">
-						<div class="about__media">
-							<!-- <div
-								class="about__image about__image--main"
-								role="img"
-								aria-label="Wedding hall interior"
-							></div> -->
-							   <!-- Main Image -->
-							<div class="about__image about__image--main">
-									<!-- <img src="images/main-hall-2.jpg" alt="Wedding hall"> -->
-									 <img src="images/main-hall-3.jpg" alt="Wedding hall">
-							</div>
-							<div class="about__badge">
-								<span class="about__badge-num">15<sup>+</sup></span>
-								<span class="about__badge-text"
-									>Years of<br />hosting memories</span
-								>
-							</div>
-							<div
-								class="about__image about__image--accent"
-								role="img"
-								aria-label="Garden view"
-							>
-						
-						 <img src="images/main-hall.jpg" alt="Garden view"></div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="section-head">
-							<span class="eyebrow">About Saini Gardens</span>
-							<h2 class="section-title">
-								A place where <em>celebration</em> speaks the language of love.
-							</h2>
-						</div>
-						<p class="section-lede">
-							At Saini Gardens, every celebration unfolds a beautiful story.
-							Whether it is a wedding with a thousand guests, an intimate
-							reception, or a corporate evening under the stars — we attend to
-							every minute detail so you can live the moment, not manage it.
-						</p>
-						<p class="section-lede">
-							Set across an expansive estate accommodating
-							<strong>1000 to 1500 guests</strong>, we remain one of the most
-							sought-after function halls across Hanamkonda, Warangal, and
-							Kazipet — known for our manicured lawns, classical architecture,
-							and hospitality that feels deeply personal.
-						</p>
-
-						<div class="about__highlights">
-							<div class="highlight">
-								<i class="bi bi-patch-check-fill"></i>
-								<span>Full event planning &amp; hospitality</span>
-							</div>
-							<div class="highlight">
-								<i class="bi bi-flower2"></i>
-								<span>Luscious lawns &amp; open skies</span>
-							</div>
-							<div class="highlight">
-								<i class="bi bi-shield-check"></i>
-								<span>Uncompromised safety &amp; V.I.P valet</span>
-							</div>
-						</div>
-
-						<div class="about__actions">
-							<a href="#booking" class="btn btn-primary-gold">
-								<span>Plan your event</span>
-								<i class="bi bi-arrow-right"></i>
-							</a>
-							<a href="#gallery" class="btn btn-link-gold">See the gardens →</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ================= AMENITIES =================
-		<section class="section amenities" id="amenities">
-			<div class="container-xxl">
-				<div class="section-head section-head--center">
-					<span class="eyebrow eyebrow--light">Our Amenities</span>
-					 <h2 class="section-title section-title--light">
-						Every comfort, thoughtfully <em>considered</em>.
-					</h2>
-					<p class="section-lede section-lede--light">
-						From valet arrival to the final toast — every element is designed to
-						host your day beautifully.
-					</p> 
-				</div>
-
-				<div class="row g-4 amenity-grid">
-					<div class="col-6 col-md-4 col-lg">
-						<div class="amenity-card">
-							<div class="amenity-card__icon">
-								<i class="bi bi-building"></i>
-							</div>
-							<h3 class="amenity-card__title">
-								Spacious Hall<br />&amp; Dining
-							</h3>
-							<p class="amenity-card__text">
-								Grand interiors with climate control and refined acoustics.
-							</p>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg">
-						<div class="amenity-card">
-							<div class="amenity-card__icon">
-								<i class="bi bi-p-square"></i>
-							</div>
-							<h3 class="amenity-card__title">Spacious<br />Parking</h3>
-							<p class="amenity-card__text">
-								Dedicated V.I.P valet with secure, ample parking space.
-							</p>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg">
-						<div class="amenity-card">
-							<div class="amenity-card__icon">
-								<i class="bi bi-cup-hot-fill"></i>
-							</div>
-							<h3 class="amenity-card__title">VIP<br />Dining</h3>
-							<p class="amenity-card__text">
-								Curated private dining for families &amp; honored guests.
-							</p>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg">
-						<div class="amenity-card">
-							<div class="amenity-card__icon">
-								<i class="bi bi-tree-fill"></i>
-							</div>
-							<h3 class="amenity-card__title">Beautiful<br />Greenery Lawns</h3>
-							<p class="amenity-card__text">
-								Manicured gardens perfect for open-air celebrations.
-							</p>
-						</div>
-					</div>
-					<div class="col-6 col-md-4 col-lg">
-						<div class="amenity-card">
-							<div class="amenity-card__icon">
-								<i class="bi bi-fire"></i>
-							</div>
-							<h3 class="amenity-card__title">Cooking<br />Area</h3>
-							<p class="amenity-card__text">
-								Fully equipped kitchen wing for in-house catering setups.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	
-		<section class="section video-section">
-			<div class="container-xxl">
-				<div class="section-head section-head--center">
-					<span class="eyebrow">A glimpse</span>
-					<h2 class="section-title">See our gardens <em>in motion</em>.</h2>
-				</div>
-				<div
-					class="video-frame"
-					role="button"
-					tabindex="0"
-					aria-label="Play venue tour video"
-					data-bs-toggle="modal"
-					data-bs-target="#videoModal"
-				>
-					<div
-						class="video-frame__thumb"
-						role="img"
-						aria-label="Saini Gardens video thumbnail"
-					></div>
-					<div class="video-frame__play">
-						<i class="bi bi-play-fill"></i>
-					</div>
-					<div class="video-frame__caption">
-						<span class="eyebrow eyebrow--light">Tour · 1:24</span>
-						<h3>A walk through Saini Gardens</h3>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		
-		<div
-			class="modal fade"
-			id="videoModal"
-			tabindex="-1"
-			aria-labelledby="videoModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog-centered modal-xl">
-				<div class="modal-content video-modal">
-					<div class="modal-header border-0">
-						<h5 class="modal-title" id="videoModalLabel">
-							Saini Gardens · Venue Tour
-						</h5>
-						<button
-							type="button"
-							class="btn-close btn-close-white"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
-					</div>
-					<div class="modal-body p-0">
-						<div class="ratio ratio-16x9">
-							<iframe
-								id="videoFrame"
-								src=""
-								title="Saini Gardens Tour"
-								allow="
-									accelerometer;
-									autoplay;
-									clipboard-write;
-									encrypted-media;
-									gyroscope;
-									picture-in-picture;
-								"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
-<!-- ================= AMENITIES + VIDEO ================= -->
-<section class="amenities-video-section">
-
-    <div class="container-xxl">
-
-        <!-- Amenities Heading -->
-        <div class="section-head section-head--center mb-5">
-            <h2 class="amenities-title">Our Amenities</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Saini Gardens is a wedding and events destination in Hasanparthy, Hanamkonda with halls, lawns, parking, dining, and event services."
+    />
+    <title>Saini Gardens - Wedding and Events Destination</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="home">
+    <div class="top-bar">
+      <div class="container site-container">
+        <span>Welcome to Saini Gardens...</span>
+        <div class="top-bar__links">
+          <a href="tel:+919876543210">+91 9876543210</a>
+          <a href="tel:+91876543210">+91 876543210</a>
+          <a href="mailto:sainigardens@gmail.com">sainigardens@gmail.com</a>
         </div>
-
-        <!-- Amenities -->
-        <div class="row g-4 justify-content-center amenity-grid">
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-building"></i>
-                    </div>
-                    <h3>Spacious Hall <br>& Dining</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-p-square"></i>
-                    </div>
-                    <h3>Spacious <br>Parking</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-cup-hot-fill"></i>
-                    </div>
-                    <h3>VIP <br>Dining</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-tree-fill"></i>
-                    </div>
-                    <h3>Beautiful <br>Greenery Lawns</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-fire"></i>
-                    </div>
-                    <h3>Cooking <br>Area</h3>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Video -->
-        <div class="video-wrapper">
-
-            <div
-                class="video-frame-custom"
-                role="button"
-                tabindex="0"
-                aria-label="Play venue tour video"
-                data-bs-toggle="modal"
-                data-bs-target="#videoModal"
-            >
-
-                <img src="images/video-thumbnail.png" alt="Video Thumbnail">
-
-                <div class="play-btn">
-                    <i class="bi bi-play-fill"></i>
-                </div>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
-</section>
+    <nav class="navbar navbar-expand-lg site-nav" id="siteNav">
+      <div class="container site-container">
+        <a class="navbar-brand" href="index.html" aria-label="Saini Gardens home">
+          <img src="images/LOGO.png" alt="Saini Gardens" class="brand-logo" />
+        </a>
 
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html" data-page="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" data-page="about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html" data-page="services">Our Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="customer-voice.html" data-page="voice">Customer Voice</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html" data-page="gallery">Photo Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" data-page="contact">Contact us</a></li>
+          </ul>
+          <a href="services.html#booking" class="btn btn-book">Book Now</a>
+        </div>
+      </div>
+    </nav>
 
+    <header class="hero" id="home">
+      <div
+        id="heroCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="3500"
+        data-bs-wrap="true"
+      >
+        <div class="carousel-indicators hero-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
 
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/garden-carousel-1.png" class="d-block w-100" alt="Saini Gardens aerial front view" />
+          </div>
+          <div class="carousel-item">
+            <img src="images/garden-carousel-2.png" class="d-block w-100" alt="Saini Gardens aerial parking view" />
+          </div>
+          <div class="carousel-item">
+            <img src="images/garden-carousel-3.png" class="d-block w-100" alt="Saini Gardens lawn and venue view" />
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <main>
+      <section class="about-section" id="about">
+        <div class="container site-container">
+          <h1 class="about-title">
+            A Legacy of Celebrations Over <br class="mobile-break" /><strong>15 years</strong> of<br class="desktop-break" /><br class="mobile-break" />
+            hosting unforgettable moments.
+          </h1>
 
-		<!-- ================= EVENTS (WE HOST) ================= -->
-		<section class="section events" id="events">
-			<div class="container-xxl">
-				<div class="section-head">
-					<span class="eyebrow">We Host</span>
-					<h2 class="section-title">Occasions <em>worth remembering</em>.</h2>
-				</div>
+          <div class="about-overlap">
+            <div class="about-photo">
+              <img src="images/main-1.png" alt="Wedding ceremony inside Saini Gardens" />
+            </div>
 
-				<!-- <div class="row g-4">
-					<div class="col-md-6 col-lg-4">
-						<article class="event-card">
-							<div
-								class="event-card__image event-card__image--wedding"
-								role="img"
-								aria-label="Wedding ceremony"
-							>
-						<img src="images/wedding-ceremony.jpg" alt="Wedding ceremony">
-						</div>
-							<div class="event-card__body">
-								<span class="event-card__num">01</span>
-								<h3 class="event-card__title">Weddings</h3>
-								<p class="event-card__text">
-									A day stitched together with rituals, laughter, and timeless
-									detail.
-								</p>
-								<a href="#booking" class="event-card__link"
-									>Enquire <i class="bi bi-arrow-right"></i
-								></a>
-							</div>
-						</article>
-							<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-src="videos/receptions.mp4">
-							Wedding
-						</button>
-					</div>
-					<div class="col-md-6 col-lg-4">
-						<article class="event-card">
-							<div
-								class="event-card__image event-card__image--reception"
-								role="img"
-								aria-label="Reception"
-							>
-						<img src="images/wedding-ceremony-2.jpg" alt="Wedding ceremony"></div>
-							<div class="event-card__body">
-								<span class="event-card__num">02</span>
-								<h3 class="event-card__title">Receptions</h3>
-								<p class="event-card__text">
-									Evenings set in golden light, filled with toasts and familiar
-									faces.
-								</p>
-								<a href="#booking" class="event-card__link"
-									>Enquire <i class="bi bi-arrow-right"></i
-								></a>
+            <article class="about-card">
+              <h2>About the <strong>Saini Gardens</strong></h2>
+              <p>
+                At Saini Gardens, every celebration unfolds a beautiful story,
+                creating cherished memories that last a lifetime. As Saini
+                Gardens, all celebrations unfold their pretty tales, giving
+                people memories for a lifetime.
+              </p>
+              <p>
+                Being one of the best function halls in Tri-Cities Hanamkonda,
+                Warangal and Kazipet, Saini Gardens serves an expansive place
+                that can accommodate 1000 to 1500 people.
+              </p>
+              <a href="about.html" class="btn btn-orange btn-small">Know more</a>
+            </article>
+          </div>
+        </div>
+      </section>
 
-								
-							</div>
-						</article>
-						<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-src="videos/receptions.mp4">
-							Receptions
-						</button>
-					</div>
-					<div class="col-md-6 col-lg-4">
-						<article class="event-card">
-							<div
-								class="event-card__image event-card__image--corporate"
-								role="img"
-								aria-label="Corporate event">
-						<img src="images/wedding-ceremony-2.jpg" alt="Wedding ceremony">	>
-						</div>
-							<div class="event-card__body">
-								<span class="event-card__num">03</span>
-								<h3 class="event-card__title">Corporate</h3>
-								<p class="event-card__text">
-									Conferences and soirées with flawless execution end-to-end.
-								</p>
-								<a href="#booking" class="event-card__link"
-									>Enquire <i class="bi bi-arrow-right"></i
-								></a>
-							</div>
-						</article>
-							<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-src="videos/receptions.mp4">
-							Corporate Events
-						</button>
-					</div>
-				</div> -->
+      <section class="amenities-video-section" id="amenities">
+        <div class="container site-container">
+          <h2 class="section-heading section-heading--light">Our Amenities</h2>
 
+          <div class="amenity-grid">
+            <div class="amenity-card-simple">
+              <span class="amenity-icon"><i class="bi bi-building-fill"></i></span>
+              <span>Spacious Hall<br />&amp; Dining</span>
+            </div>
+            <div class="amenity-card-simple">
+              <span class="amenity-icon"><i class="bi bi-car-front-fill"></i></span>
+              <span>Spacious<br />Parking</span>
+            </div>
+            <div class="amenity-card-simple">
+              <span class="amenity-icon"><i class="bi bi-cup-hot-fill"></i></span>
+              <span>VIP<br />Dining</span>
+            </div>
+            <div class="amenity-card-simple">
+              <span class="amenity-icon"><i class="bi bi-flower2"></i></span>
+              <span>Beautiful<br />Greenery Lawns</span>
+            </div>
+            <div class="amenity-card-simple">
+              <span class="amenity-icon"><i class="bi bi-fire"></i></span>
+              <span>Cooking<br />Area</span>
+            </div>
+          </div>
 
+          <div
+            class="video-wrapper"
+            role="button"
+            tabindex="0"
+            aria-label="Play venue tour video"
+            data-bs-toggle="modal"
+            data-bs-target="#videoModal"
+          >
+            <img src="images/video-thumbnail.png" alt="Saini Gardens venue video thumbnail" />
+            <span class="play-btn"><i class="bi bi-play-fill"></i></span>
+          </div>
+        </div>
+      </section>
 
-				<div class="row g-4 justify-content-center">
+      <section class="hosts-section" id="events">
+        <div class="container site-container">
+          <div class="rule-title">
+            <span>We Host</span>
+          </div>
 
-					<!-- Wedding -->
-					<div class="col-md-6 col-lg-4">
-						<div class="event-box">
-							<img src="images/wedding-ceremony.jpg" alt="Wedding Ceremony">
+          <div class="row g-4 host-grid">
+            <div class="col-md-4">
+              <article class="host-card">
+                <img src="images/wedding-ceremony.jpg" alt="Wedding ceremony" />
+                <h3>Wedding</h3>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="host-card">
+                <img src="images/wedding-ceremony-2.jpg" alt="Reception event" />
+                <h3>Reception</h3>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="host-card">
+                <img src="images/wedding-ceremony-2.jpg" alt="Corporate event" />
+                <h3>Corporate Events</h3>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-							<button 
-								class="event-btn"
-								data-bs-toggle="modal"
-								data-bs-target="#videoModal"
-								data-video-src="videos/receptions.mp4">
-								Wedding
-							</button>
-						</div>
-					</div>
+      <section class="booking-section" id="booking">
+        <div class="container site-container">
+          <div class="row gx-5 gy-5 align-items-start">
+            <div class="col-lg-7">
+              <h2 class="pill-heading">Check Booking Slot</h2>
+              <div class="calendar-card">
+                <div class="calendar-header">
+                  <button class="cal-nav" id="prevMonth" aria-label="Previous month">
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <div class="calendar-title">
+                    <span id="calMonth">March</span>
+                    <span id="calYear">2026</span>
+                  </div>
+                  <button class="cal-nav" id="nextMonth" aria-label="Next month">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+                <div class="calendar-weekdays">
+                  <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Booking calendar"></div>
+              </div>
+            </div>
 
-					<!-- Reception -->
-					<div class="col-md-6 col-lg-4">
-						<div class="event-box">
-							<img src="images/wedding-ceremony-2.jpg" alt="Reception">
+            <div class="col-lg-5">
+              <h2 class="pill-heading">Our Services</h2>
+              <ol class="services-list">
+                <li>Hall Rental includes<br /><span>Tables, Chairs, Dance Floor, Stage</span></li>
+                <li>White Tablecloth Provided For Premier Packages Only</li>
+                <li>Parking Garage included</li>
+                <li>Cleaning Services included</li>
+                <li>Hall Rental includes<br /><span>Tables, Chairs, Dance Floor, Stage</span></li>
+                <li>White Tablecloth Provided For Premier Packages Only</li>
+                <li>Parking Garage included</li>
+                <li>Cleaning Services included</li>
+                <li>Hall Rental includes<br /><span>Tables, Chairs, Dance Floor, Stage</span></li>
+                <li>White Tablecloth Provided For Premier Packages Only</li>
+                <li>Parking Garage included</li>
+                <li>Cleaning Services included</li>
+              </ol>
+              <p class="service-contact">More information please contact</p>
+              <a href="tel:+919876543210" class="service-phone">+91 9876543210</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-							<button 
-								class="event-btn"
-								data-bs-toggle="modal"
-								data-bs-target="#videoModal"
-								data-video-src="videos/receptions.mp4">
-								Reception
-							</button>
-						</div>
-					</div>
+      <section class="gallery-section" id="gallery">
+        <div class="container site-container">
+          <h2 class="gallery-title">A Beautiful Garden for Your Perfect Wedding!</h2>
+          <div class="gallery-grid">
+            <a href="#" class="gallery-tile" data-gallery-index="0">
+              <span class="gallery-image gallery-image--1"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="1">
+              <span class="gallery-image gallery-image--2"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="2">
+              <span class="gallery-image gallery-image--3"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="3">
+              <span class="gallery-image gallery-image--4"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="4">
+              <span class="gallery-image gallery-image--5"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="5">
+              <span class="gallery-image gallery-image--6"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="6">
+              <span class="gallery-image gallery-image--7"></span>
+            </a>
+            <a href="#" class="gallery-tile" data-gallery-index="7">
+              <span class="gallery-image gallery-image--8"></span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-					<!-- Corporate -->
-					<div class="col-md-6 col-lg-4">
-						<div class="event-box">
-							<img src="images/wedding-ceremony-2.jpg" alt="Corporate Event">
+      <section class="description-section">
+        <div class="container site-container">
+          <p>
+            Saini Gardens is Hanamkonda's brand new Weddings and events destination with multiple venue options,
+            state of the art infrastructure, uncompromised safety and security, hassle-free &amp; V.I.P valet parking,
+            and one of the most luscious lawn spaces in the city.
+          </p>
+          <strong>Saini Gardens - Hasanparthy, Hanamkonda</strong>
+        </div>
+      </section>
 
-							<button 
-								class="event-btn"
-								data-bs-toggle="modal"
-								data-bs-target="#videoModal"
-								data-video-src="videos/receptions.mp4">
-								Corporate Events
-							</button>
-						</div>
-					</div>
+      <section class="testimonials-contact-section" id="testimonials">
+        <div class="map-panel">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.0999999999995!2d79.5!3d18.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHanamkonda%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Saini Gardens location"
+          ></iframe>
+        </div>
 
-				</div>
+        <div class="container site-container">
+          <div class="row g-4 align-items-center bottom-content">
+            <div class="col-lg-6">
+              <span class="mini-label">Testimonials</span>
+              <h2 class="testimonial-heading">What our happy people<br />say about us</h2>
+              <div
+                id="testimonialCarousel"
+                class="carousel slide testimonial-carousel"
+                data-bs-ride="carousel"
+                data-bs-interval="6000"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      </blockquote>
+                      <figcaption>Mr. Lorem Ipsum</figcaption>
+                    </figure>
+                  </div>
+                  <div class="carousel-item">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                        Saini Gardens made our celebration effortless with clean halls, good support and excellent open spaces.
+                      </blockquote>
+                      <figcaption>Priya Reddy</figcaption>
+                    </figure>
+                  </div>
+                  <div class="carousel-item">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                        The lawn, parking and dining arrangements were handled smoothly from start to finish.
+                      </blockquote>
+                      <figcaption>Karthik Rao</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-lg-6 contact-column" id="contact">
+              <article class="contact-card">
+                <h2>Contact Us</h2>
+                <ul>
+                  <li>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>H.No: 27-9-70/1,<br />Hasanparthy, Hanamkonda,<br />Telangana - 506015</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+919701173363">+91 9701173363</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-envelope-fill"></i>
+                    <a href="mailto:contact@sainigardens.com">contact@sainigardens.com</a>
+                  </li>
+                </ul>
+                <h3>Quick Connects</h3>
+                <div class="socials">
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
+    <footer class="site-footer">
+      <div class="container site-container">
+        <span>Copyright 2026. All rights Reserved by <a href="index.html">Web Vision Services</a></span>
+        <span>Design and Developed by <a href="index.html">Kashyap Solutions</a></span>
+      </div>
+    </footer>
 
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="videoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content video-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="videoModalLabel">Saini Gardens Venue Tour</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="videoFrame"
+                src=""
+                title="Saini Gardens Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-			</div>
-		</section>
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content booking-modal">
+          <div class="modal-header">
+            <h3 class="modal-title" id="bookingModalLabel">Reserve your date</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="bName">Full name</label>
+                  <input type="text" class="form-control" id="bName" required minlength="2" />
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="bPhone">Phone</label>
+                  <input type="tel" class="form-control" id="bPhone" required pattern="[0-9+\s\-]{10,15}" />
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="bEventType">Event type</label>
+                  <select class="form-select" id="bEventType" required>
+                    <option value="" disabled selected>Choose one</option>
+                    <option>Wedding</option>
+                    <option>Reception</option>
+                    <option>Corporate Event</option>
+                    <option>Other Celebration</option>
+                  </select>
+                  <div class="invalid-feedback">Please select an event type.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="bDate">Selected date</label>
+                  <input type="text" class="form-control" id="bDate" readonly />
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="bMessage">Message</label>
+                  <textarea class="form-control" id="bMessage" rows="3"></textarea>
+                </div>
+              </div>
 
-		<!-- ================= BOOKING (CALENDAR) ================= -->
-		<section class="section booking" id="booking">
-			<div class="container-xxl">
-				<div class="row g-5">
-					<div class="col-lg-7">
-						<div class="section-head">
-							<span class="eyebrow eyebrow--light">Check availability</span>
-							<h2 class="section-title section-title--light">
-								Your date, <em>reserved</em>.
-							</h2>
-							<p class="section-lede section-lede--light">
-								Select any open date on the calendar to begin your booking.
-								Dates marked in red are already reserved.
-							</p>
-						</div>
+              <div class="booking-actions">
+                <button type="submit" class="btn btn-orange" id="bookingSubmit">
+                  <span class="btn-label">Send enquiry</span>
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              </div>
 
-						<div class="calendar-card">
-							<div class="calendar-header">
-								<button
-									class="cal-nav"
-									id="prevMonth"
-									aria-label="Previous month"
-								>
-									<i class="bi bi-chevron-left"></i>
-								</button>
-								<div class="calendar-title">
-									<span id="calMonth">March</span>
-									<span id="calYear">2026</span>
-								</div>
-								<button class="cal-nav" id="nextMonth" aria-label="Next month">
-									<i class="bi bi-chevron-right"></i>
-								</button>
-							</div>
-							<div class="calendar-weekdays">
-								<span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span
-								><span>Thu</span><span>Fri</span><span>Sat</span>
-							</div>
-							<div
-								class="calendar-grid"
-								id="calendarGrid"
-								role="grid"
-								aria-label="Booking calendar"
-							></div>
-							<div class="calendar-legend">
-								<span class="legend-item"
-									><i class="dot dot--today"></i> Today</span
-								>
-								<span class="legend-item"
-									><i class="dot dot--available"></i> Available</span
-								>
-								<span class="legend-item"
-									><i class="dot dot--booked"></i> Booked</span
-								>
-								<span class="legend-item"
-									><i class="dot dot--selected"></i> Selected</span
-								>
-							</div>
-						</div>
-					</div>
+              <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Thank you. We will contact you soon.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<div class="col-lg-5">
-						<div class="services-panel">
-							<span class="eyebrow eyebrow--gold">Our Services</span>
-							<h3 class="services-panel__title">What's included</h3>
-							<ol class="services-list">
-								<li>
-									<strong>Hall Rental</strong>
-									<span>(Tables, Chairs, Dance Floor, Stage)</span>
-								</li>
-								<li>White tablecloth on premier packages</li>
-								<li>Parking garage included</li>
-								<li>Cleaning services included</li>
-								<li>Dedicated V.I.P valet</li>
-								<li>On-site event coordinator</li>
-								<li>Premium lighting &amp; sound support</li>
-								<li>Bridal &amp; green rooms</li>
-							</ol>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close" aria-label="Close lightbox">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <button class="lightbox__prev" aria-label="Previous image">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="lightbox__next" aria-label="Next image">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <div class="lightbox__stage">
+        <div class="lightbox__image" id="lightboxImage"></div>
+        <div class="lightbox__counter" id="lightboxCounter">1 / 8</div>
+      </div>
+    </div>
 
-							<div class="services-panel__contact">
-								<span class="eyebrow eyebrow--gold">For more information</span>
-								<a href="tel:+919876543210" class="phone-link">
-									<i class="bi bi-telephone-fill"></i>
-									<span>+91 98765 43210</span>
-								</a>
-								<a
-									href="mailto:sainigardens@gmail.com"
-									class="phone-link phone-link--secondary"
-								>
-									<i class="bi bi-envelope-fill"></i>
-									<span>sainigardens@gmail.com</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <a href="services.html#booking" class="floating-book d-lg-none" aria-label="Book now">
+      <i class="bi bi-calendar2-heart-fill"></i>
+      <span>Book</span>
+    </a>
 
-		<!-- Booking Modal -->
-		<div
-			class="modal fade"
-			id="bookingModal"
-			tabindex="-1"
-			aria-labelledby="bookingModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog-centered modal-lg">
-				<div class="modal-content booking-modal">
-					<div class="modal-header">
-						<div>
-							<span class="eyebrow eyebrow--gold">Enquire</span>
-							<h3 class="modal-title" id="bookingModalLabel">
-								Reserve your date
-							</h3>
-						</div>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
-					</div>
-					<div class="modal-body">
-						<form id="bookingForm" novalidate>
-							<div class="row g-3">
-								<div class="col-md-6">
-									<label class="form-label" for="bName">Full name</label>
-									<input
-										type="text"
-										class="form-control"
-										id="bName"
-										required
-										minlength="2"
-										placeholder="e.g. Priya Reddy"
-									/>
-									<div class="invalid-feedback">
-										Please enter your full name.
-									</div>
-								</div>
-								<div class="col-md-6">
-									<label class="form-label" for="bPhone">Phone</label>
-									<input
-										type="tel"
-										class="form-control"
-										id="bPhone"
-										required
-										pattern="[0-9+\s\-]{10,15}"
-										placeholder="+91 98xxx xxxxx"
-									/>
-									<div class="invalid-feedback">
-										Please enter a valid phone number.
-									</div>
-								</div>
-								<div class="col-md-6">
-									<label class="form-label" for="bEventType">Event type</label>
-									<select class="form-select" id="bEventType" required>
-										<option value="" disabled selected>Choose one…</option>
-										<option>Wedding</option>
-										<option>Reception</option>
-										<option>Corporate Event</option>
-										<option>Other Celebration</option>
-									</select>
-									<div class="invalid-feedback">
-										Please select an event type.
-									</div>
-								</div>
-								<div class="col-md-6">
-									<label class="form-label" for="bDate">Selected date</label>
-									<input type="text" class="form-control" id="bDate" readonly />
-								</div>
-								<div class="col-12">
-									<label class="form-label" for="bMessage">Message</label>
-									<textarea
-										class="form-control"
-										id="bMessage"
-										rows="3"
-										placeholder="Guest count, special requests, preferred timings…"
-									></textarea>
-								</div>
-							</div>
-
-							<div class="booking-modal__actions">
-								<button
-									type="submit"
-									class="btn btn-primary-gold"
-									id="bookingSubmit"
-								>
-									<span class="btn-label">Send enquiry</span>
-									<span class="btn-spinner" aria-hidden="true"></span>
-									<i class="bi bi-arrow-right"></i>
-								</button>
-								<button
-									type="button"
-									class="btn btn-ghost-dark"
-									data-bs-dismiss="modal"
-								>
-									Cancel
-								</button>
-							</div>
-
-							<div
-								class="booking-success"
-								id="bookingSuccess"
-								role="status"
-								aria-live="polite"
-							>
-								<i class="bi bi-check-circle-fill"></i>
-								<div>
-									<strong>Thank you!</strong>
-									<p>
-										We'll contact you soon with availability &amp; a special
-										discount.
-									</p>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- ================= GALLERY ================= -->
-		<section class="section gallery" id="gallery">
-			<div class="container-xxl">
-				<div class="section-head section-head--center">
-					<span class="eyebrow">Gallery</span>
-					<h2 class="section-title">
-						A beautiful garden for your <em>perfect wedding</em>.
-					</h2>
-				</div>
-
-				<div class="gallery-grid">
-					<a
-						href="#"
-						class="gallery-item gallery-item--tall"
-						data-gallery-index="0"
-					>
-						<div
-							class="gallery-image gallery-image--1"
-							role="img"
-							aria-label="Garden lawn"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Lawns</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="1">
-						<div
-							class="gallery-image gallery-image--2"
-							role="img"
-							aria-label="Hall decor"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Hall</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="2">
-						<div
-							class="gallery-image gallery-image--3"
-							role="img"
-							aria-label="Aerial view"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Aerial</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="3">
-						<div
-							class="gallery-image gallery-image--4"
-							role="img"
-							aria-label="Entry view"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Entrance</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="4">
-						<div
-							class="gallery-image gallery-image--5"
-							role="img"
-							aria-label="Arch gate"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Gate</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="5">
-						<div
-							class="gallery-image gallery-image--6"
-							role="img"
-							aria-label="Side lawn"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Side Lawn</span
-						>
-					</a>
-					<a
-						href="#"
-						class="gallery-item gallery-item--wide"
-						data-gallery-index="6"
-					>
-						<div
-							class="gallery-image gallery-image--7"
-							role="img"
-							aria-label="Banquet setup"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Banquet</span
-						>
-					</a>
-					<a href="#" class="gallery-item" data-gallery-index="7">
-						<div
-							class="gallery-image gallery-image--8"
-							role="img"
-							aria-label="Stage view"
-						></div>
-						<span class="gallery-item__label"
-							><i class="bi bi-zoom-in"></i> Stage</span
-						>
-					</a>
-				</div>
-
-				<p class="gallery-caption">
-					Saini Gardens is Hanamkonda's brand-new destination for weddings and
-					events — offering multiple venues, state-of-the-art infrastructure,
-					uncompromised safety, V.I.P valet parking, and one of the most
-					luscious lawn spaces in the city.
-				</p>
-				<p class="gallery-location">
-					<i class="bi bi-geo-alt-fill"></i> Saini Gardens · Hasanparthy,
-					Hanamkonda
-				</p>
-			</div>
-		</section>
-
-		<!-- Lightbox -->
-		<div class="lightbox" id="lightbox" aria-hidden="true">
-			<button class="lightbox__close" aria-label="Close lightbox">
-				<i class="bi bi-x-lg"></i>
-			</button>
-			<button class="lightbox__prev" aria-label="Previous image">
-				<i class="bi bi-chevron-left"></i>
-			</button>
-			<button class="lightbox__next" aria-label="Next image">
-				<i class="bi bi-chevron-right"></i>
-			</button>
-			<div class="lightbox__stage">
-				<div class="lightbox__image" id="lightboxImage"></div>
-				<div class="lightbox__counter" id="lightboxCounter">1 / 8</div>
-			</div>
-		</div>
-
-		<!-- ================= TESTIMONIALS ================= -->
-		<section class="section testimonials">
-			<div class="container-xxl">
-				<div class="section-head section-head--center">
-					<span class="eyebrow eyebrow--gold">Testimonials</span>
-					<h2 class="section-title section-title--light">
-						What our <em>happy couples</em> say.
-					</h2>
-				</div>
-
-				<div
-					id="testimonialCarousel"
-					class="carousel slide testimonial-carousel"
-					data-bs-ride="carousel"
-					data-bs-interval="6000"
-				>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<figure class="testimonial">
-								<i class="bi bi-quote testimonial__mark"></i>
-								<blockquote class="testimonial__quote">
-									Saini Gardens turned our wedding into the most magical three
-									days of our lives. From the first site visit to the last
-									farewell, every detail was anticipated with grace. The lawns
-									at sunset — we'll never forget it.
-								</blockquote>
-								<figcaption class="testimonial__author">
-									<span class="testimonial__name">Ananya &amp; Karthik</span>
-									<span class="testimonial__role">Wedding · November 2025</span>
-								</figcaption>
-							</figure>
-						</div>
-						<div class="carousel-item">
-							<figure class="testimonial">
-								<i class="bi bi-quote testimonial__mark"></i>
-								<blockquote class="testimonial__quote">
-									We hosted our 500-guest reception here and not a single thing
-									went wrong. The team treats every event like it's their own
-									family's — warmth you cannot fake.
-								</blockquote>
-								<figcaption class="testimonial__author">
-									<span class="testimonial__name">Sravani Reddy</span>
-									<span class="testimonial__role">Reception · August 2025</span>
-								</figcaption>
-							</figure>
-						</div>
-						<div class="carousel-item">
-							<figure class="testimonial">
-								<i class="bi bi-quote testimonial__mark"></i>
-								<blockquote class="testimonial__quote">
-									A venue that genuinely understands hospitality. Our corporate
-									summit ran flawlessly, with AV, catering, and logistics all
-									managed by the in-house team. Highly recommended.
-								</blockquote>
-								<figcaption class="testimonial__author">
-									<span class="testimonial__name">Ravi Teja</span>
-									<span class="testimonial__role"
-										>Corporate Event · February 2026</span
-									>
-								</figcaption>
-							</figure>
-						</div>
-					</div>
-					<div class="carousel-controls">
-						<button
-							class="carousel-control"
-							type="button"
-							data-bs-target="#testimonialCarousel"
-							data-bs-slide="prev"
-							aria-label="Previous"
-						>
-							<i class="bi bi-arrow-left"></i>
-						</button>
-						<div class="carousel-indicators">
-							<button
-								type="button"
-								data-bs-target="#testimonialCarousel"
-								data-bs-slide-to="0"
-								class="active"
-								aria-current="true"
-								aria-label="Slide 1"
-							></button>
-							<button
-								type="button"
-								data-bs-target="#testimonialCarousel"
-								data-bs-slide-to="1"
-								aria-label="Slide 2"
-							></button>
-							<button
-								type="button"
-								data-bs-target="#testimonialCarousel"
-								data-bs-slide-to="2"
-								aria-label="Slide 3"
-							></button>
-						</div>
-						<button
-							class="carousel-control"
-							type="button"
-							data-bs-target="#testimonialCarousel"
-							data-bs-slide="next"
-							aria-label="Next"
-						>
-							<i class="bi bi-arrow-right"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ================= CONTACT ================= -->
-		<section class="section contact" id="contact">
-			<div class="container-xxl">
-				<div class="row g-0 contact-wrap">
-					<div class="col-lg-5">
-						<div class="contact-panel">
-							<span class="eyebrow eyebrow--gold">Contact Us</span>
-							<h2 class="contact-panel__title">
-								Let's plan something <em>unforgettable</em>.
-							</h2>
-
-							<ul class="contact-list">
-								<li>
-									<i class="bi bi-geo-alt-fill"></i>
-									<div>
-										<strong>Address</strong>
-										<span
-											>H. No: 27-9-70/1, Hasanparthy,<br />Hanamkonda, Telangana
-											— 506015</span
-										>
-									</div>
-								</li>
-								<li>
-									<i class="bi bi-telephone-fill"></i>
-									<div>
-										<strong>Phone</strong>
-										<a href="tel:+919701173363">+91 97011 73363</a>
-									</div>
-								</li>
-								<li>
-									<i class="bi bi-envelope-fill"></i>
-									<div>
-										<strong>Email</strong>
-										<a href="mailto:contact@sainigardens.com"
-											>contact@sainigardens.com</a
-										>
-									</div>
-								</li>
-								<li>
-									<i class="bi bi-clock-fill"></i>
-									<div>
-										<strong>Open</strong>
-										<span>All days · 9:00 AM – 9:00 PM</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="contact-socials">
-								<span class="eyebrow eyebrow--gold">Quick connects</span>
-								<div class="socials">
-									<a href="#" aria-label="Instagram"
-										><i class="bi bi-instagram"></i
-									></a>
-									<a href="#" aria-label="Facebook"
-										><i class="bi bi-facebook"></i
-									></a>
-									<a href="#" aria-label="Twitter"
-										><i class="bi bi-twitter-x"></i
-									></a>
-									<a href="#" aria-label="YouTube"
-										><i class="bi bi-youtube"></i
-									></a>
-									<a href="#" aria-label="WhatsApp"
-										><i class="bi bi-whatsapp"></i
-									></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-7">
-						<div class="contact-map">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.0999999999995!2d79.5!3d18.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHanamkonda%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000"
-								width="100%"
-								height="100%"
-								style="border: 0"
-								allowfullscreen=""
-								loading="lazy"
-								referrerpolicy="no-referrer-when-downgrade"
-								title="Saini Gardens location"
-							></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ================= FOOTER ================= -->
-		<footer class="site-footer">
-			<div class="container-xxl">
-				<div class="row g-4 align-items-start footer-main">
-					<div class="col-lg-5">
-						<div class="brand-mark brand-mark--footer">
-							<span class="brand-mark__crown">
-								<svg
-									viewBox="0 0 40 28"
-									xmlns="http://www.w3.org/2000/svg"
-									aria-hidden="true"
-								>
-									<path
-										d="M4 22 L8 8 L14 18 L20 6 L26 18 L32 8 L36 22 Z"
-										fill="currentColor"
-										opacity="0.95"
-									/>
-									<circle cx="8" cy="8" r="1.8" fill="currentColor" />
-									<circle cx="20" cy="6" r="2" fill="currentColor" />
-									<circle cx="32" cy="8" r="1.8" fill="currentColor" />
-								</svg>
-							</span>
-							<div class="brand-mark__text">
-								<span class="brand-mark__name">Saini</span>
-								<span class="brand-mark__sub">GARDENS</span>
-							</div>
-						</div>
-						<p class="footer-tagline">
-							A legacy of celebrations — where every gathering becomes a story
-							worth telling. Hosting weddings, receptions and corporate events
-							across Hanamkonda, Warangal &amp; Kazipet.
-						</p>
-					</div>
-					<div class="col-6 col-lg-2">
-						<h5 class="footer-heading">Explore</h5>
-						<ul class="footer-links">
-							<li><a href="#home">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#amenities">Amenities</a></li>
-							<li><a href="#gallery">Gallery</a></li>
-						</ul>
-					</div>
-					<div class="col-6 col-lg-2">
-						<h5 class="footer-heading">Events</h5>
-						<ul class="footer-links">
-							<li><a href="#events">Weddings</a></li>
-							<li><a href="#events">Receptions</a></li>
-							<li><a href="#events">Corporate</a></li>
-							<li><a href="#booking">Book a date</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3">
-						<h5 class="footer-heading">Visit us</h5>
-						<address class="footer-address">
-							Hasanparthy, Hanamkonda,<br />
-							Telangana — 506015<br />
-							<a href="tel:+919701173363">+91 97011 73363</a>
-						</address>
-					</div>
-				</div>
-				<div class="footer-bar">
-					<span
-						>© <span id="footerYear"></span> Saini Gardens. All rights
-						reserved.</span
-					>
-					<span>Crafted with care · Hanamkonda, Telangana</span>
-				</div>
-			</div>
-		</footer>
-
-		<!-- Floating book-now button (mobile) -->
-		<a href="#booking" class="floating-book d-lg-none" aria-label="Book now">
-			<i class="bi bi-calendar2-heart-fill"></i>
-			<span>Book</span>
-		</a>
-
-		<!-- Scripts -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="js/script.js"></script>
-	</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

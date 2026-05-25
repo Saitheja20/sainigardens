@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<!-- Meta -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Saini Gardens in Hasanparthy, Hanamkonda, Warangal -  Banquet Halls in Warangal">
+    <meta name="keywords" content="">
+    <meta name="author" content="Saini Gardens">
+	<!-- Page Title -->
+	<title>Saini Gardens in Hasanparthy, Hanamkonda, Warangal -  Banquet Halls in Warangal.</title>
+	<link rel="canonical" href="https://sainigardens.com" />
+	<!-- Google Fonts css-->
+	<link href="//fonts.googleapis.com/css?family=Berkshire+Swash%7CPoppins:300,400,500,600,700%7CSaira+Semi+Condensed:400,500,600,700,800,900" rel="stylesheet">
+	<!-- Bootstrap css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- Font Awesome icon css-->
+	<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<!-- Carousel css -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<!-- Magnific Popup CSS -->
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<!-- Slick nav css -->
+	<link rel="stylesheet" href="css/slicknav.css">
+	<!-- Main custom css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+</head>
+<body data-spy="scroll" data-target="#navigation" data-offset="70">
+	<!-- Preloader starts -->
+	<div class="preloader">
+        <div class="browser-screen-loading-content">
+		  <div class="loading-dots dark-gray">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		  </div>
+		  <p class="loading-text">Loading</p>
+		</div>
+    </div>
+	<!-- Preloader Ends -->
+	<!-- Header Section Starts-->
+	<header>
+		<nav id="main-nav" class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- Logo starts -->
+					<a class="navbar-brand" href="#">
+						<img src="images/saini-gardens.png" alt="saini-gardens"/>
+					</a>
+					<!-- Logo Ends -->
+					<!-- Responsive Menu button starts -->
+					<div class="navbar-toggle">
+					</div>
+					<!-- Responsive Menu button Ends -->
+				</div>
+				<div id="responsive-menu"></div>
+				<!-- Navigation starts -->
+				<div class="navbar-collapse collapse" id="navigation">
+					<ul class="nav navbar-nav navbar-right main-navigation" id="main-menu">
+						<li class="active"><a href="#home">Home</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#services">Our Services</a></li>
+						<li><a href="#introvideo">Gardens View</a></li>
+						<li><a href="#photogallery">Photo Gallery</a></li>
+						<li><a href="#contact">Contact us</a></li>
+					</ul>
+				</div>
+				<!-- Navigation Ends -->
+			</div>
+		</nav>
+	</header>
+	<!-- Header Section Ends-->
+	<!-- Banner Section Starts -->
+	<section class="banner" id="home">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="offter-container">
+						<div class="banner-offter-box">
+							<h2>Welcome to <span>Saini Gardens!<span></h2>
+							<h4 style="color:yellow">Premier Function Halls in Tri Cities</h4>
+							<p>Every celebration narrates a beautiful story associated with it. A Celebration is not just a gathering, it is about making and sharing memories with pure hearts. Come join us to make your memories sensational</p>
+							<a href="tel:97011 73363" class="btn-custom">Call Us : 97011 73363</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Banner Section Ends -->
+	<!-- About section starts -->
+	<section class="aboutus" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="aboutus-image">
+						<img src="images/about.jpg" alt="Saini Gardens A/C"/>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="aboutus-content">
+						<div class="main-title">
+							<h2>Saini Gardens A/C</h2>
+							<!-- <p>A.C & Banquet Hall</p> -->
+						</div>
+						<div class="aboutus-entry">
+							<p>Every celebration narrates a beautiful story associated with it. A Celebration is not just a gathering, it is about making and sharing memories with pure hearts. Come join us to make your memories sensational. From marriages to corporate events we are the jack of all trades.</p>
+<p>We at Saini Gardens believe that every celebration is an expression of love hence there shouldn’t be any shortages, we offer a huge space to accommodate 1000 to 2000 individuals in a single go. Experience the best hospitality with Saini Gardens, a premium Function hall in Hasanparthy, Hanamkonda & Warangal.</p>
+ <p>We have raised the standards and the set of expectations, ambiance, hospitality, and luxury above the traditional Function halls.</p>
+							<div class="about-social">
+								<a target="_blank" href="https://www.facebook.com/sainigardens"><i class="fa fa-facebook"></i></a>
+								<a target="_blank" href="https://www.instagram.com/saini_gardens/"><i class="fa fa-instagram"></i></a>
+								<a target="_blank" href="https://maps.app.goo.gl/MxGBh6e5fZ7H8jtV6"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About section ends -->
+	<!-- Services section starts -->
+	<section class="services" id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-title">
+						<h2>Our services</h2>
+						<p>Happiness can begin with the smallest things. Saini Gardens would help create enchanting memories for all of your moments and celebrations while you sit behind and relish the instance. We take on gatherings such as</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="service-single left-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-1.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Weddings & Receptions </h3>
+							<p>Most memorable event of your life at Saini Gardens with our wedding venues in Hasanparthy, equipped with modern amenities</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single left-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-2.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Cradle Ceremonies</h3>
+							<p>Choose Saini Gardens Ac Function Hall with a capacity 1000 – 2000 people for child naming ceremony in Hanamkonda </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single right-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-3.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Birthday Parties</h3>
+							<p>Saini Gardens is the perfect Function halls in Hanamkonda for birthday parties. We will help you to make your special day unforgettable.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single right-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-4.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Half- Saree traditions</h3>
+							<p>It is a ceremony where in the girl is gifted langa voni or half saree symbolising her transition into teenage. Similarly a Dhoti ceremony is performed for boys.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single left-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-5.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>School & College Parties</h3>
+							<p>Saini Gardens & Function hall is an excellent option for those looking for a spacious and elegant setting to celebrate a school & College event</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single left-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-6.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Corporate Parties</h3>
+							<p>Our Function halls are suitable for a wide range of corporate events, including conferences, seminars, product launches, award ceremonies, and More...</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single right-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-7.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Get-Togethers </h3>
+							<p>Saini Gardens & Function Halls can be a perfect destination for events such as weddings, birthdays, corporate events, social get together</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="service-single right-service">
+						<div class="service-image">
+							<figure>
+								<img src="images/service-8.jpg" alt="Saini Gardens A/C"/>
+							</figure>
+						</div>
+						<div class="service-content">
+							<h3>Anniversary</h3>
+							<p>Perfect Experiences for Celebrating Milestones in Your Life! ... Immerse in Love with Our Elegant Decoration Set @ Saini Gardens </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services section ends -->
+	<!-- Contact Bar Section starts -->
+	<div class="contact-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="contact-barinfo">
+						<p style="text-align:center">Saini Gardens is Hanamkonda’s brand new Weddings and events destination with multiple venue options, state of the art infrastructure, uncompromised safety and security, hassle-free & V.I.P valet parking, and one of the most luscious lawn spaces in the city.<br><br></h5>
+						<p style="text-align:center"><i>Saini Gardens - Hasanparthy, Hanamkonda</i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contact Bar Section ends -->
+	<!-- Intro Video section start -->
+	<div class="intro-video" id="introvideo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="paly-button">
+						<!-- <a href="http://www.youtube.com/watch?v=Q6dsRpVyyWs" class="popup-video"> -->
+							<!-- <i class="fa fa-play"></i> -->
+						<!-- </a> -->
+						<a href="images/Saini-Gardensa-a-c.mp4" class="popup-video">
+							<i class="fa fa-play"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Intro Video section ends -->
+	<!-- Photo Gallery Section starts -->
+	<section class="photo-gallery" id="photogallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-title">
+						<h2>Photo Gallery</h2>
+						<p>Browse our library of event designs</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-1.jpg"><img src="images/gallery/photo-1.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-2.jpg"><img src="images/gallery/photo-2.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-3.jpg"><img src="images/gallery/photo-3.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-4.jpg"><img src="images/gallery/photo-4.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-5.jpg"><img src="images/gallery/photo-5.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-6.jpg"><img src="images/gallery/photo-6.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-7.jpg"><img src="images/gallery/photo-7.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-8.jpg"><img src="images/gallery/photo-8.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-9.jpg"><img src="images/gallery/photo-9.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-10.jpg"><img src="images/gallery/photo-10.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-11.jpg"><img src="images/gallery/photo-11.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="gallery-box">
+						<a href="images/gallery/photo-12.jpg"><img src="images/gallery/photo-12.jpg" alt="Saini Gardens A/C"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Photo Gallery Section ends -->
+	<!-- Mega Footer start -->
+	<section id="contact">
+<div class="row">
+				<div class="col-md-12">
+					<div class="main-title">
+						<h2>Contact Us</h2>
+						<p>If any query please contact us</p>
+					</div>
+				</div>
+			</div>
+	<div class="contact-bar">
+		<div class="container">
+			<div class="row">		
+				<div class="col-md-12">
+					<div class="contact-barinfo">
+						<h4 style="text-align:center; color:white">27-9-70/1, Hasanparthy, Hanamkonda, Telangana -  506015 <br><br>
+						</h4>
+						<h3 style="text-align:center; color:white"><a style=" color:white" href="tel:97011 73363">Call Us : 97011 73363</a></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1896.63858874971!2d79.52848317259979!3d18.05871877412181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3349327358c22b%3A0x10d80556e9291847!2sSaini%20Gardens%20A%2FC%20and%20Banquet%20Hall!5e0!3m2!1sen!2sin!4v1707255150138!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+	<!-- Mega Footer ends -->
+	<!-- Footer starts -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="siteinfo">
+						<p>Copyright &copy; Saini Gardens. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends -->
+    <!-- Jquery Library File -->
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<!-- SmoothScroll -->
+	<script src="js/SmoothScroll.js"></script>
+    <!-- Bootstrap js file -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Counterup js file -->
+	<script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Isotop js file -->
+	<script src="js/isotope.min.js"></script>
+    <!-- Slick Nav js file -->
+	<script src="js/jquery.slicknav.js"></script>
+	<!-- Magnific Popup js file -->
+	<script src="js/jquery.magnific-popup.js"></script>
+	<!-- Owl Carousel js file -->
+	<script src="js/owl.carousel.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"14540fee95af4337b6a2a788a5ed265a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
