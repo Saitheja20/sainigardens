@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -43,6 +45,7 @@ img {
 }
 
 .site-container {
+  width: 100%;
   max-width: 980px;
   padding-left: 18px;
   padding-right: 18px;
@@ -711,6 +714,7 @@ img {
   width: min(100%, 980px);
   margin: 0 auto;
   padding: 82px 18px 54px;
+  overflow-wrap: break-word;
 }
 
 .subpage-hero .mini-label {
@@ -1420,6 +1424,7 @@ img {
   .amenity-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
+    max-width: 100%;
   }
 
   .amenity-card-simple {
@@ -1503,7 +1508,13 @@ img {
   }
 
   .subpage-hero h1 {
-    font-size: 28px;
+    max-width: 100%;
+    font-size: 26px;
+  }
+
+  .subpage-hero p {
+    max-width: 100%;
+    font-size: 13px;
   }
 
   .subpage-copy {
@@ -1546,9 +1557,41 @@ img {
   }
 }
 
+@media (max-width: 575.98px) {
+  .subpage-hero h1,
+  .subpage-hero p {
+    max-width: 340px;
+  }
+
+  .amenity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-card-simple {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 420px) {
   .top-bar__links a:first-child {
     display: none;
+  }
+
+  .subpage-hero h1,
+  .subpage-hero p {
+    max-width: 340px;
+  }
+
+  .amenity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-card-simple {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
   }
 
   .about-photo {

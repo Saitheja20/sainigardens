@@ -77,9 +77,14 @@
     ".host-card",
     ".calendar-card",
     ".services-list",
+    ".service-feature-card",
     ".gallery-tile",
     ".testimonial-card",
+    ".voice-card",
+    ".split-image",
+    ".stat-card",
     ".contact-card",
+    ".contact-form-card",
   ];
 
   revealTargets.forEach((selector) => {
