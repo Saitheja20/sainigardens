@@ -35,27 +35,15 @@
   ];
 
   const siteNav = $("#siteNav");
+  const currentPage = document.body.dataset.page || "home";
 
   function onScroll() {
     if (siteNav) {
       siteNav.classList.toggle("scrolled", window.scrollY > 40);
     }
 
-    const sections = $$("section[id], header[id]");
-    const scrollY = window.scrollY + 110;
-    let currentId = "home";
-
-    sections.forEach((section) => {
-      if (section.offsetTop <= scrollY) currentId = section.id;
-    });
-
     $$(".navbar-nav .nav-link").forEach((link) => {
-      const href = link.getAttribute("href");
-      const isActive =
-        href === `#${currentId}` ||
-        (currentId === "amenities" && href === "#booking") ||
-        (currentId === "events" && href === "#booking");
-      link.classList.toggle("active", isActive);
+      link.classList.toggle("active", link.dataset.page === currentPage);
     });
   }
 
@@ -89,9 +77,14 @@
     ".host-card",
     ".calendar-card",
     ".services-list",
+    ".service-feature-card",
     ".gallery-tile",
     ".testimonial-card",
+    ".voice-card",
+    ".split-image",
+    ".stat-card",
     ".contact-card",
+    ".contact-form-card",
   ];
 
   revealTargets.forEach((selector) => {

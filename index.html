@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-page="home">
     <div class="top-bar">
       <div class="container site-container">
         <span>Welcome to Saini Gardens...</span>
@@ -39,7 +39,7 @@
 
     <nav class="navbar navbar-expand-lg site-nav" id="siteNav">
       <div class="container site-container">
-        <a class="navbar-brand" href="#home" aria-label="Saini Gardens home">
+        <a class="navbar-brand" href="index.html" aria-label="Saini Gardens home">
           <img src="images/LOGO.png" alt="Saini Gardens" class="brand-logo" />
         </a>
 
@@ -57,14 +57,14 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="#booking">Our Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonials">Customer Voice</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Photo Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index.html" data-page="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" data-page="about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html" data-page="services">Our Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="customer-voice.html" data-page="voice">Customer Voice</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html" data-page="gallery">Photo Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" data-page="contact">Contact us</a></li>
           </ul>
-          <a href="#booking" class="btn btn-book">Book Now</a>
+          <a href="services.html#booking" class="btn btn-book">Book Now</a>
         </div>
       </div>
     </nav>
@@ -140,7 +140,7 @@
                 Warangal and Kazipet, Saini Gardens serves an expansive place
                 that can accommodate 1000 to 1500 people.
               </p>
-              <a href="#booking" class="btn btn-orange btn-small">Know more</a>
+              <a href="about.html" class="btn btn-orange btn-small">Know more</a>
             </article>
           </div>
         </div>
@@ -398,8 +398,8 @@
 
     <footer class="site-footer">
       <div class="container site-container">
-        <span>Copyright 2026. All rights Reserved by <a href="#home">Web Vision Services</a></span>
-        <span>Design and Developed by <a href="#home">Kashyap Solutions</a></span>
+        <span>Copyright 2026. All rights Reserved by <a href="index.html">Web Vision Services</a></span>
+        <span>Design and Developed by <a href="index.html">Kashyap Solutions</a></span>
       </div>
     </footer>
 
@@ -522,7 +522,7 @@
       </div>
     </div>
 
-    <a href="#booking" class="floating-book d-lg-none" aria-label="Book now">
+    <a href="services.html#booking" class="floating-book d-lg-none" aria-label="Book now">
       <i class="bi bi-calendar2-heart-fill"></i>
       <span>Book</span>
     </a>
