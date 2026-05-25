@@ -695,6 +695,217 @@ img {
   font-weight: 500;
 }
 
+.subpage-hero {
+  min-height: 282px;
+  display: flex;
+  align-items: end;
+  background:
+    linear-gradient(90deg, rgba(0, 27, 114, 0.82), rgba(0, 27, 114, 0.18)),
+    var(--page-image);
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+}
+
+.subpage-hero__content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 82px 18px 54px;
+}
+
+.subpage-hero .mini-label {
+  margin-bottom: 12px;
+}
+
+.subpage-hero h1 {
+  max-width: 620px;
+  margin: 0 0 12px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.subpage-hero p {
+  max-width: 610px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.subpage-copy {
+  padding: 58px 0;
+  background: var(--white);
+}
+
+.subpage-copy h2,
+.split-copy h2 {
+  margin: 0 0 16px;
+  color: var(--blue);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.subpage-copy p,
+.split-copy p {
+  margin: 0 0 14px;
+  color: #454b5a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.split-image {
+  height: 315px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 27, 114, 0.12);
+}
+
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.stat-card {
+  padding: 22px 18px;
+  border-left: 4px solid var(--orange);
+  background: #f6f7fa;
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--blue);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.stat-card span {
+  display: block;
+  margin-top: 8px;
+  color: #505665;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.blue-band {
+  padding: 58px 0;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.service-card-grid,
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-feature-card,
+.voice-card {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 27, 114, 0.13);
+}
+
+.service-feature-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+}
+
+.service-feature-card div,
+.voice-card {
+  padding: 22px;
+}
+
+.service-feature-card h3,
+.voice-card h3 {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.service-feature-card p,
+.voice-card p {
+  margin: 0;
+  color: #4d5362;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.voice-card {
+  position: relative;
+}
+
+.voice-card .quote-icon {
+  top: 12px;
+  right: 18px;
+  opacity: 0.45;
+}
+
+.voice-card strong {
+  display: block;
+  margin-top: 18px;
+  color: var(--blue);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.contact-page-section {
+  padding: 62px 0;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.contact-page-card {
+  width: 100%;
+  margin: 0;
+}
+
+.map-large {
+  min-height: 360px;
+  height: 100%;
+  border: 5px solid var(--white);
+  background:
+    radial-gradient(circle at 70% 45%, #e94d35 0 7px, transparent 8px),
+    repeating-linear-gradient(0deg, #edf2f4 0 28px, #d9e1e5 29px 31px),
+    repeating-linear-gradient(90deg, transparent 0 38px, rgba(199, 207, 212, 0.9) 39px 41px),
+    #e6edf2;
+}
+
+.map-large iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  opacity: 0.75;
+}
+
+.contact-form-card {
+  padding: 30px;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+}
+
+.contact-form-card h2 {
+  margin: 0 0 18px;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+}
+
 .testimonials-contact-section {
   min-height: 318px;
   background: var(--blue);
@@ -1281,6 +1492,37 @@ img {
   .description-section p,
   .description-section strong {
     font-size: 13px;
+  }
+
+  .subpage-hero {
+    min-height: 235px;
+  }
+
+  .subpage-hero__content {
+    padding: 64px 18px 38px;
+  }
+
+  .subpage-hero h1 {
+    font-size: 28px;
+  }
+
+  .subpage-copy {
+    padding: 42px 0;
+  }
+
+  .split-image {
+    height: 260px;
+  }
+
+  .stat-grid,
+  .service-card-grid,
+  .voice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blue-band,
+  .contact-page-section {
+    padding: 44px 0;
   }
 
   .testimonial-carousel {
