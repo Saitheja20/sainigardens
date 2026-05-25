@@ -114,149 +114,7 @@
         font-size: 22px;
     }
 }
-
-
-
-
-
-/* amenties and videos ection styles */
-
-
-/* ======================================================
-   AMENITIES + VIDEO COMBINED SECTION
-====================================================== */
-
-.amenities-video-section{
-    background: #001969;
-    padding: 70px 0 140px;
-    position: relative;
-}
-
-.amenities-title{
-    color: #fff;
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Amenities */
-
-.amenity-grid{
-    margin-bottom: 70px;
-}
-
-.amenity-card-simple{
-    text-align: center;
-    color: #fff;
-    transition: 0.3s ease;
-}
-
-.amenity-card-simple h3{
-    font-size: 18px;
-    line-height: 1.5;
-    color: #fff;
-    margin-top: 18px;
-    font-weight: 500;
-}
-
-.amenity-icon{
-    width: 90px;
-    height: 90px;
-    margin: auto;
-    border: 1px solid rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    position: relative;
-}
-
-.amenity-icon i{
-    font-size: 42px;
-    color: #f4c15d;
-}
-
-/* Video */
-
-.video-wrapper{
-    position: relative;
-    margin-bottom: -220px;
-    z-index: 5;
-	border-left: 5px solid white;
-    border-top: 5px solid white;
-    border-right: 5px solid white;
-}
-
-.video-frame-custom{
-    position: relative;
-    border-radius: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.video-frame-custom img{
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    display: block;
-}
-
-.play-btn{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90px;
-    height: 90px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.play-btn i{
-    font-size: 42px;
-    color: #001969;
-    margin-left: 5px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-    .amenities-video-section{
-        padding: 60px 0 100px;
-    }
-
-    .amenities-title{
-        font-size: 32px;
-    }
-
-    .amenity-grid{
-        row-gap: 30px;
-    }
-
-    .video-wrapper{
-        margin-bottom: -140px;
-    }
-
-    .video-frame-custom img{
-        height: 280px;
-    }
-
-    .play-btn{
-        width: 70px;
-        height: 70px;
-    }
-
-    .play-btn i{
-        font-size: 32px;
-    }
-}
 		</style>
-
-		
 	</head>
 	<body>
 		<!-- ================= TOP BAR ================= -->
@@ -498,18 +356,18 @@
 			</div>
 		</section>
 
-		<!-- ================= AMENITIES =================
+		<!-- ================= AMENITIES ================= -->
 		<section class="section amenities" id="amenities">
 			<div class="container-xxl">
 				<div class="section-head section-head--center">
 					<span class="eyebrow eyebrow--light">Our Amenities</span>
-					 <h2 class="section-title section-title--light">
+					<!-- <h2 class="section-title section-title--light">
 						Every comfort, thoughtfully <em>considered</em>.
 					</h2>
 					<p class="section-lede section-lede--light">
 						From valet arrival to the final toast — every element is designed to
 						host your day beautifully.
-					</p> 
+					</p> -->
 				</div>
 
 				<div class="row g-4 amenity-grid">
@@ -574,7 +432,7 @@
 			</div>
 		</section>
 
-	
+		<!-- ================= VIDEO ================= -->
 		<section class="section video-section">
 			<div class="container-xxl">
 				<div class="section-head section-head--center">
@@ -605,7 +463,7 @@
 			</div>
 		</section>
 
-		
+		<!-- Video Modal -->
 		<div
 			class="modal fade"
 			id="videoModal"
@@ -646,99 +504,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
-
-
-<!-- ================= AMENITIES + VIDEO ================= -->
-<section class="amenities-video-section">
-
-    <div class="container-xxl">
-
-        <!-- Amenities Heading -->
-        <div class="section-head section-head--center mb-5">
-            <h2 class="amenities-title">Our Amenities</h2>
-        </div>
-
-        <!-- Amenities -->
-        <div class="row g-4 justify-content-center amenity-grid">
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-building"></i>
-                    </div>
-                    <h3>Spacious Hall <br>& Dining</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-p-square"></i>
-                    </div>
-                    <h3>Spacious <br>Parking</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-cup-hot-fill"></i>
-                    </div>
-                    <h3>VIP <br>Dining</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-tree-fill"></i>
-                    </div>
-                    <h3>Beautiful <br>Greenery Lawns</h3>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg">
-                <div class="amenity-card-simple">
-                    <div class="amenity-icon">
-                        <i class="bi bi-fire"></i>
-                    </div>
-                    <h3>Cooking <br>Area</h3>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Video -->
-        <div class="video-wrapper">
-
-            <div
-                class="video-frame-custom"
-                role="button"
-                tabindex="0"
-                aria-label="Play venue tour video"
-                data-bs-toggle="modal"
-                data-bs-target="#videoModal"
-            >
-
-                <img src="images/video-thumbnail.png" alt="Video Thumbnail">
-
-                <div class="play-btn">
-                    <i class="bi bi-play-fill"></i>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
+		</div>
 
 		<!-- ================= EVENTS (WE HOST) ================= -->
 		<section class="section events" id="events">

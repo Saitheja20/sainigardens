@@ -897,8 +897,14 @@ em {
 }
 
 /* ------------------ 10. EVENTS ------------------ */
-.events { background: var(--cream); }
 
+/* .events { 
+	background: var(--cream); 
+} */
+
+.events {
+	background: #ffffff;
+}
 .event-card {
   background: var(--white);
   border-radius: var(--r-md);
