@@ -72,12 +72,12 @@ img {
 }
 
 .btn-small {
-  font-size: 10px;
+  font-size: 14px;
   padding: 8px 16px;
 }
 
 .top-bar {
-  height: 22px;
+  height: 32px;
   background: var(--blue);
   color: var(--white);
   font-size: 10px;
@@ -97,7 +97,7 @@ img {
 }
 
 .site-nav {
-  min-height: 44px;
+  min-height: 53px;
   padding: 0;
   background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid rgba(0, 27, 114, 0.08);
@@ -145,7 +145,7 @@ img {
 
 .navbar-nav .nav-link {
   color: #333846;
-  font-size: 10px;
+  font-size: 15px;  
   font-weight: 500;
   padding: 15px 10px;
   transition: color 0.2s ease;
@@ -247,28 +247,39 @@ img {
 }
 
 .about-overlap {
-  min-height: 690px;
+  /* min-height: 690px; */
   position: relative;
 }
 
 .about-photo {
   width: 58%;
   max-width: 700px;
-  height: 560px;
+  /* height: 560px; */
   overflow: hidden;
 }
 
+
+@media screen and (min-width: 768px) {
+  .about-photo img {
+  width: 77%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 43%;
+}
+}
+
+@media screen and (max-width: 767px) {
 .about-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 43%;
 }
-
+}
 .about-card {
   width: 64%;
   max-width: 760px;
-  min-height: 440px;
+  /* min-height: 440px; */
   background: #f5f5f5;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
   padding: 40px 44px 36px;
@@ -293,7 +304,7 @@ img {
 .about-card p {
   margin: 0 0 11px;
   color: #404655;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.65;
 }
 
@@ -324,7 +335,133 @@ img {
   margin: 0 auto;
 }
 
+
 .amenity-card-simple {
+  min-height: 92px;
+  color: var(--white);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.13;
+}
+
+.amenity-icon {
+  width: calc(100% - 30px);
+  height: 95px;
+  margin: 0 auto -6px; /* important */
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid rgba(255,255,255,0.45);
+  border-left: 1px solid rgba(255,255,255,0.45);
+  border-right: 1px solid rgba(255,255,255,0.45);
+
+  color: var(--gold);
+}
+
+/* Bottom left line */
+.amenity-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+}
+
+/* Bottom right line */
+.amenity-icon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+}
+
+.amenity-text {
+  display: inline-block;
+  background: #001f7a; /* same as section bg */
+  padding: 0 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.amenity-icon i {
+  font-size: 38px;
+  line-height: 1;
+}
+
+
+
+/* .amenity-card-simple {
+  min-height: 92px;
+  color: var(--white);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.13;
+}
+
+.amenity-icon {
+  width: calc(100% - 30px);
+  height: 95px;
+  margin: 0 auto 14px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid rgba(255,255,255,0.45);
+  border-left: 1px solid rgba(255,255,255,0.45);
+  border-right: 1px solid rgba(255,255,255,0.45);
+
+  color: var(--gold);
+}
+
+.amenity-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 22px;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+}
+
+.amenity-icon::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: 0;
+  width: 22px;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+}
+
+.amenity-text {
+
+    position: absolute;
+    bottom: 0px;
+     left: 0; 
+     width: 22px; 
+     height: 1px; 
+   background: rgba(255, 255, 255, 0.45); 
+
+}*/
+
+/* .amenity-icon i {
+  font-size: 38px;
+  line-height: 1;
+} */ 
+
+/* .amenity-card-simple {
   min-height: 92px;
   color: var(--white);
   text-align: center;
@@ -340,14 +477,16 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
+   border-top: 1px solid rgba(255, 255, 255, 0.45);
+    border-right: 1px solid rgba(255, 255, 255, 0.45);
   color: var(--gold);
 }
 
 .amenity-icon i {
   font-size: 38px;
   line-height: 1;
-}
+} */
 
 .video-wrapper {
   width: calc(100% + 6px);
@@ -408,15 +547,19 @@ img {
 }
 
 .rule-title span {
-  min-width: 96px;
-  height: 24px;
-  display: inline-flex;
+  /* min-width: 96px;
+  height: 24px; */
+
+
+   min-width: 106px;
+  height: 31px;
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
   background: var(--blue);
   color: var(--white);
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -433,13 +576,13 @@ img {
 
 .host-card img {
   width: 100%;
-  height: 142px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px 4px 0 0;
 }
 
 .host-card h3 {
-  height: 24px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -447,7 +590,7 @@ img {
   border-radius: 2px;
   background: var(--orange);
   color: var(--white);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -468,13 +611,13 @@ img {
   border-radius: 4px;
   background: var(--orange);
   color: var(--white);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .calendar-card {
   width: 100%;
-  max-width: 565px;
+  /* max-width: 565px; */
   background: var(--white);
   color: #333846;
   border: 1px solid #d8dfef;
@@ -575,7 +718,7 @@ img {
   margin: 0 0 24px;
   padding-left: 22px;
   color: var(--white);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.35;
 }
 
@@ -616,7 +759,7 @@ img {
 }
 
 .gallery-grid {
-  width: 82%;
+  width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1365,7 +1508,7 @@ img {
 .contact-card {
   width: 250px;
   min-height: 220px;
-  margin-left: 84px;
+  margin-left: -307px;
   padding: 28px 25px;
   background: var(--orange);
   color: var(--white);
@@ -1633,7 +1776,7 @@ img {
   .top-bar {
     height: auto;
     padding: 6px 0;
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .top-bar .site-container,
