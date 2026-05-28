@@ -20,18 +20,8 @@
     `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 
   const MONTH_NAMES = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
   ];
 
   const siteNav = $("#siteNav");
@@ -41,7 +31,6 @@
     if (siteNav) {
       siteNav.classList.toggle("scrolled", window.scrollY > 40);
     }
-
     $$(".navbar-nav .nav-link").forEach((link) => {
       link.classList.toggle("active", link.dataset.page === currentPage);
     });
@@ -49,6 +38,61 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* ==============================
+     MOBILE MENU – FORCE CLOSE INSTANTLY
+     Removes Bootstrap collapse classes immediately so the
+     menu vanishes before the browser navigates to a new page.
+  ============================== */
+  (function () {
+    var navEl = document.getElementById("mainNav");
+    if (!navEl) return;
+
+    function forceCloseMenu() {
+      if (!navEl.classList.contains("show")) return;
+      navEl.classList.remove("show", "collapsing");
+      navEl.removeAttribute("style");
+      var toggler = document.querySelector(".navbar-toggler");
+      if (toggler) toggler.setAttribute("aria-expanded", "false");
+    }
+
+    /* Nav links: close → tiny delay → navigate */
+    navEl.querySelectorAll(".navbar-nav .nav-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var href = link.getAttribute("href");
+        forceCloseMenu();
+        if (href && href !== "#" && !href.startsWith("#")) {
+          e.preventDefault();
+          setTimeout(function () { window.location.href = href; }, 50);
+        }
+      });
+    });
+
+    /* Book Now button */
+    var bookBtn = navEl.querySelector(".btn-book");
+    if (bookBtn) {
+      bookBtn.addEventListener("click", function (e) {
+        var href = bookBtn.getAttribute("href");
+        forceCloseMenu();
+        if (href && href !== "#" && !href.startsWith("#")) {
+          e.preventDefault();
+          setTimeout(function () { window.location.href = href; }, 50);
+        }
+      });
+    }
+
+    /* Tap the ✕ pseudo-element (top-right 60×60 zone) */
+    navEl.addEventListener("click", function (e) {
+      var r = navEl.getBoundingClientRect();
+      if (e.clientX >= r.right - 60 && e.clientX <= r.right &&
+          e.clientY >= r.top && e.clientY <= r.top + 60) {
+        forceCloseMenu();
+      }
+    });
+  })();
+
+  /* ==============================
+     SMOOTH SCROLL for # links
+  ============================== */
   $$('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
@@ -69,28 +113,16 @@
     });
   });
 
+  /* ==============================
+     REVEAL ANIMATIONS
+  ============================== */
   const revealTargets = [
-    ".about-title",
-    ".about-overlap",
-    ".amenity-card-simple",
-    ".video-wrapper",
-    ".host-card",
-    ".calendar-card",
-    ".services-list",
-    ".service-feature-card",
-    ".gallery-tile",
-    ".testimonial-card",
-    ".voice-card",
-    ".split-image",
-    ".stat-card",
-    ".contact-card",
-    ".contact-form-card",
-    ".image-panel",
-    ".feature-list__item",
-    ".event-category-card",
-    ".process-card",
-    ".faq-card",
-    ".visit-card",
+    ".about-title", ".about-overlap", ".amenity-card-simple", ".video-wrapper",
+    ".host-card", ".calendar-card", ".services-list", ".service-feature-card",
+    ".gallery-tile", ".testimonial-card", ".voice-card", ".split-image",
+    ".stat-card", ".contact-card", ".contact-form-card", ".image-panel",
+    ".feature-list__item", ".event-category-card", ".process-card",
+    ".faq-card", ".visit-card",
   ];
 
   revealTargets.forEach((selector) => {
@@ -109,12 +141,14 @@
       },
       { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
     );
-
     $$(".reveal").forEach((element) => observer.observe(element));
   } else {
     $$(".reveal").forEach((element) => element.classList.add("in-view"));
   }
 
+  /* ==============================
+     BOOKING CALENDAR
+  ============================== */
   const calendarGrid = $("#calendarGrid");
   const calMonthEl = $("#calMonth");
   const calYearEl = $("#calYear");
@@ -189,10 +223,7 @@
     if (dateInput) {
       const selected = new Date(iso);
       dateInput.value = selected.toLocaleDateString("en-IN", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
+        weekday: "long", day: "numeric", month: "long", year: "numeric",
       });
       dateInput.dataset.iso = iso;
     }
@@ -212,6 +243,9 @@
   if (nextBtn) nextBtn.addEventListener("click", () => changeMonth(1));
   buildCalendar();
 
+  /* ==============================
+     BOOKING FORM
+  ============================== */
   const bookingForm = $("#bookingForm");
   const bookingSubmit = $("#bookingSubmit");
   const bookingSuccess = $("#bookingSuccess");
@@ -223,7 +257,6 @@
       let valid = true;
       $$("input, select", bookingForm).forEach((field) => {
         if (field.id === "bDate") return;
-
         if (!field.checkValidity()) {
           field.classList.add("is-invalid");
           valid = false;
@@ -232,10 +265,7 @@
         }
       });
 
-      if (!$("#bDate")?.value) {
-        valid = false;
-      }
-
+      if (!$("#bDate")?.value) valid = false;
       if (!valid) return;
 
       bookingSubmit.classList.add("loading");
@@ -254,9 +284,7 @@
             createdAt: new Date().toISOString(),
           });
           localStorage.setItem("saini_bookings", JSON.stringify(existing));
-        } catch (error) {
-          /* Storage can be unavailable in private browsing. */
-        }
+        } catch (error) { /* Storage may be unavailable in private browsing */ }
 
         bookingSubmit.classList.remove("loading");
         bookingSubmit.disabled = false;
@@ -276,20 +304,21 @@
     });
   }
 
+  /* ==============================
+     VIDEO MODAL
+  ============================== */
   const videoModal = $("#videoModal");
   const videoFrame = $("#videoFrame");
-  const VIDEO_URL =
-    "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&rel=0&modestbranding=1";
+  const VIDEO_URL = "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&rel=0&modestbranding=1";
 
   if (videoModal && videoFrame) {
-    videoModal.addEventListener("show.bs.modal", () => {
-      videoFrame.src = VIDEO_URL;
-    });
-    videoModal.addEventListener("hidden.bs.modal", () => {
-      videoFrame.src = "";
-    });
+    videoModal.addEventListener("show.bs.modal", () => { videoFrame.src = VIDEO_URL; });
+    videoModal.addEventListener("hidden.bs.modal", () => { videoFrame.src = ""; });
   }
 
+  /* ==============================
+     LIGHTBOX GALLERY
+  ============================== */
   const galleryItems = $$(".gallery-tile");
   const lightbox = $("#lightbox");
   const lightboxImage = $("#lightboxImage");
@@ -329,8 +358,7 @@
   }
 
   function navLightbox(direction) {
-    currentLightboxIndex =
-      (currentLightboxIndex + direction + galleryItems.length) % galleryItems.length;
+    currentLightboxIndex = (currentLightboxIndex + direction + galleryItems.length) % galleryItems.length;
     updateLightbox();
   }
 
