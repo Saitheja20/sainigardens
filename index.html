@@ -455,21 +455,21 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="bookingForm" novalidate>
+            <form id="bookingForm" action="send_email.php" method="POST">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label" for="bName">Full name</label>
-                  <input type="text" class="form-control" id="bName" required minlength="2" />
+                  <input type="text" class="form-control" id="bName" name="bName" required minlength="2" />
                   <div class="invalid-feedback">Please enter your full name.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="bPhone">Phone</label>
-                  <input type="tel" class="form-control" id="bPhone" required pattern="[0-9+\s\-]{10,15}" />
+                  <input type="tel" class="form-control" id="bPhone" name="bPhone" required pattern="[0-9+\s\-]{10,15}" />
                   <div class="invalid-feedback">Please enter a valid phone number.</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="bEventType">Event type</label>
-                  <select class="form-select" id="bEventType" required>
+                  <select class="form-select" id="bEventType" name="bEventType" required>
                     <option value="" disabled selected>Choose one</option>
                     <option>Wedding</option>
                     <option>Reception</option>
@@ -480,27 +480,31 @@
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="bDate">Selected date</label>
-                  <input type="text" class="form-control" id="bDate" readonly />
+                  <input type="text" class="form-control" id="bDate" name="bDate" readonly />
                 </div>
                 <div class="col-12">
                   <label class="form-label" for="bMessage">Message</label>
-                  <textarea class="form-control" id="bMessage" rows="3"></textarea>
+                  <textarea class="form-control" id="bMessage" name="bMessage" rows="3"></textarea>
                 </div>
               </div>
 
               <div class="booking-actions">
                 <button type="submit" class="btn btn-orange" id="bookingSubmit">
                   <span class="btn-label">Send enquiry</span>
-                  <span class="btn-spinner" aria-hidden="true"></span>
                 </button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
               </div>
+            </form>
 
-              <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite">
+            <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite" style="display: none;">
                 <i class="bi bi-check-circle-fill"></i>
                 <span>Thank you. We will contact you soon.</span>
-              </div>
-            </form>
+            </div>
+
+            <div class="booking-error" id="bookingError" role="status" aria-live="alert" style="display: none;">
+                <i class="bi bi-x-circle-fill"></i>
+                <span>There was an error sending your enquiry. Please try again later.</span>
+            </div>
           </div>
         </div>
       </div>

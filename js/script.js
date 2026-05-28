@@ -243,66 +243,63 @@
   if (nextBtn) nextBtn.addEventListener("click", () => changeMonth(1));
   buildCalendar();
 
-  /* ==============================
-     BOOKING FORM
-  ============================== */
-  const bookingForm = $("#bookingForm");
-  const bookingSubmit = $("#bookingSubmit");
-  const bookingSuccess = $("#bookingSuccess");
+   /* ==============================
+      BOOKING FORM - (Now handled by PHP)
+   ============================== */
+   const bookingForm = $("#bookingForm");
+   const bookingSuccess = $("#bookingSuccess");
+   const bookingError = $("#bookingError");
+   const bookingModal = $("#bookingModal");
 
-  if (bookingForm && bookingSubmit && bookingSuccess) {
-    bookingForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+   if (bookingForm && bookingModal) {
+     // Handle displaying success/error messages after PHP redirect
+     const urlParams = new URLSearchParams(window.location.search);
+     if (urlParams.get("status") === "success") {
+       if (bookingSuccess) {
+         bookingSuccess.style.display = "flex";
+         const bsModal = new bootstrap.Modal(bookingModal);
+         bsModal.show();
+         window.setTimeout(() => {
+           bsModal.hide();
+           bookingSuccess.style.display = "none";
+           // Clear URL params
+           window.history.replaceState({}, document.title, window.location.pathname);
+         }, 3000);
+       }
+     } else if (urlParams.get("status") === "error") {
+       if (bookingError) {
+         bookingError.style.display = "flex";
+         const bsModal = new bootstrap.Modal(bookingModal);
+         bsModal.show();
+         window.setTimeout(() => {
+           bsModal.hide();
+           bookingError.style.display = "none";
+           // Clear URL params
+           window.history.replaceState({}, document.title, window.location.pathname);
+         }, 3000);
+       }
+     }
 
-      let valid = true;
-      $$("input, select", bookingForm).forEach((field) => {
-        if (field.id === "bDate") return;
-        if (!field.checkValidity()) {
-          field.classList.add("is-invalid");
-          valid = false;
-        } else {
-          field.classList.remove("is-invalid");
-        }
-      });
+     // Basic client-side validation display (optional, can be improved)
+     bookingForm.addEventListener("submit", (event) => {
+       if (!bookingForm.checkValidity()) {
+         event.preventDefault();
+         event.stopPropagation();
+         bookingForm.classList.add("was-validated");
+       } else {
+         bookingForm.classList.remove("was-validated");
+       }
+     });
 
-      if (!$("#bDate")?.value) valid = false;
-      if (!valid) return;
-
-      bookingSubmit.classList.add("loading");
-      bookingSubmit.disabled = true;
-
-      window.setTimeout(() => {
-        try {
-          const existing = JSON.parse(localStorage.getItem("saini_bookings") || "[]");
-          existing.push({
-            id: Date.now(),
-            name: $("#bName").value.trim(),
-            phone: $("#bPhone").value.trim(),
-            eventType: $("#bEventType").value,
-            date: selectedDateISO || $("#bDate").dataset.iso || $("#bDate").value,
-            message: $("#bMessage").value.trim(),
-            createdAt: new Date().toISOString(),
-          });
-          localStorage.setItem("saini_bookings", JSON.stringify(existing));
-        } catch (error) { /* Storage may be unavailable in private browsing */ }
-
-        bookingSubmit.classList.remove("loading");
-        bookingSubmit.disabled = false;
-        bookingSuccess.classList.add("show");
-
-        window.setTimeout(() => {
-          bootstrap.Modal.getInstance($("#bookingModal"))?.hide();
-          bookingForm.reset();
-          bookingSuccess.classList.remove("show");
-        }, 1800);
-      }, 700);
-    });
-
-    $$("input, select, textarea", bookingForm).forEach((field) => {
-      field.addEventListener("input", () => field.classList.remove("is-invalid"));
-      field.addEventListener("change", () => field.classList.remove("is-invalid"));
-    });
-  }
+     // Clear validation state when modal is hidden
+     bookingModal.addEventListener("hidden.bs.modal", () => {
+        bookingForm.classList.remove("was-validated");
+        bookingForm.reset();
+        // Also hide success/error messages if modal is closed manually
+        if (bookingSuccess) bookingSuccess.style.display = "none";
+        if (bookingError) bookingError.style.display = "none";
+     });
+   }
 
   /* ==============================
      VIDEO MODAL
