@@ -146,6 +146,7 @@
     $$(".reveal").forEach((element) => element.classList.add("in-view"));
   }
 
+
   /* ==============================
      BOOKING CALENDAR
   ============================== */
@@ -184,9 +185,31 @@
 
       const iso = toISO(cellDate);
       const cell = document.createElement("button");
+      
       cell.type = "button";
       cell.className = "cal-day";
-      cell.textContent = day;
+      // cell.textContent = day;
+cell.innerHTML = `
+  <div class="slot morning"></div>
+  <div class="slot evening"></div>
+  <span class="day-number">${day}</span>
+`;
+
+
+const bookedSlots = {
+    "2026-03-10": ["morning"],
+    "2026-03-15": ["evening"],
+    "2026-03-20": ["morning","evening"]
+};
+const daySlots = bookedSlots[iso] || [];
+
+if (daySlots.includes("morning")) {
+    cell.querySelector(".morning").classList.add("booked");
+}
+
+if (daySlots.includes("evening")) {
+    cell.querySelector(".evening").classList.add("booked");
+}
       cell.setAttribute("role", "gridcell");
       cell.setAttribute("data-date", iso);
 
@@ -218,6 +241,28 @@
     );
     cell.classList.add("cal-day--selected");
     selectedDateISO = iso;
+console.log("Date clicked:", iso);
+
+
+function updateShiftAvailability(selectedDate) {
+    console.log("updateShiftAvailability called:", selectedDate);
+
+    const shiftSelect = document.getElementById("bShift");
+    console.log("Shift Select:", shiftSelect);
+
+    if (!shiftSelect) return;
+
+   const bookedSlots = {
+        "2026-07-13": ["Morning"],
+        "2026-07-14": ["Evening"],
+        "2026-07-15": ["Both"]
+    };
+
+    console.log("Booked Slots:", bookedSlots[selectedDate]);
+
+}
+
+updateShiftAvailability(iso);
 
     const dateInput = $("#bDate");
     if (dateInput) {
@@ -312,7 +357,6 @@
     videoModal.addEventListener("show.bs.modal", () => { videoFrame.src = VIDEO_URL; });
     videoModal.addEventListener("hidden.bs.modal", () => { videoFrame.src = ""; });
   }
-
   /* ==============================
      LIGHTBOX GALLERY
   ============================== */
@@ -385,3 +429,5 @@
 
   onScroll();
 })();
+
+

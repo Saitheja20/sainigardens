@@ -1,0 +1,217 @@
+  <section class="testimonials-contact-section" id="testimonials">
+        <div class="map-panel">
+         <a href="https://maps.app.goo.gl/eiN17KKGQHrqYpty9">
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3793.273542138649!2d79.52696502582124!3d18.05888718311256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3349327358c22b%3A0x10d80556e9291847!2sSaini%20Gardens%20A%2FC%20Convention%20Hall%20%7C%20Wedding%20Hall%20in%20Hanamkonda!5e0!3m2!1sen!2sin!4v1780566810446!5m2!1sen!2sin" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </a>
+        
+        </div>
+
+        <div class="container site-container">
+          <div class="row g-4 align-items-center bottom-content">
+            <div class="col-lg-6">
+              <span class="mini-label">Testimonials</span>
+              <h2 class="testimonial-heading">What our happy people<br />say about us</h2>
+              <div
+                id="testimonialCarousel"
+                class="carousel slide testimonial-carousel"
+                data-bs-ride="carousel"
+                data-bs-interval="6000"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                       The venue is spacious, well-maintained, and beautifully designed for weddings, receptions, birthdays, corporate events, and family gatherings.
+                      </blockquote>
+                      <figcaption>Mr. sai</figcaption>
+                    </figure>
+                  </div>
+                  <div class="carousel-item">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                        Saini Gardens made our celebration effortless with clean halls, good support and excellent open spaces.
+                      </blockquote>
+                      <figcaption>Priya Reddy</figcaption>
+                    </figure>
+                  </div>
+                  <div class="carousel-item">
+                    <figure class="testimonial-card">
+                      <i class="bi bi-quote quote-icon"></i>
+                      <blockquote>
+                        The lawn, parking and dining arrangements were handled smoothly from start to finish.
+                      </blockquote>
+                      <figcaption>Karthik Rao</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 contact-column" id="contact">
+              <article class="contact-card">
+                <h2>Contact Us</h2>
+                <ul>
+                  <li>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>H.No: 27-9-70/1,<br />Hasanparthy, Hanamkonda,<br />Telangana - 506015</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+919701173363">+91 9701173363</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-envelope-fill"></i>
+                    <a href="mailto:contact@sainigardens.com">contact@sainigardens.com</a>
+                  </li>
+                </ul>
+                <h3>Quick Connects</h3>
+                <div class="socials">
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-container">
+        <span>Copyright 2026. All rights Reserved by <a href="index.html">SainiGardens</a></span>
+        <span>Design and Developed by <a href="index.html">kakatiya Solutions</a></span>
+      </div>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="videoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content video-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="videoModalLabel">Saini Gardens Venue Tour</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="videoFrame"
+                src=""
+                title="Saini Gardens Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true" >
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+     <div class="modal-content booking-modal"> 
+      <div class="modal-header">
+         <h3 class="modal-title" id="bookingModalLabel">Reserve your date</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button> 
+        </div> 
+        <div class="modal-body">
+           <form id="bookingForm" action="send_email.php" method="POST"> 
+            <div class="row g-3"> <div class="col-md-6">
+               <label class="form-label" for="bName">Full name</label>
+                <input type="text" class="form-control" id="bName" name="bName" required minlength="2" /> 
+                <div class="invalid-feedback">Please enter your full name.</div> 
+              </div> 
+              <div class="col-md-6">
+                 <label class="form-label" for="bPhone" max-length="10">Phone</label>
+                  <input type="tel" class="form-control" id="bPhone" name="bPhone" required pattern="[0-9+\s\-]{10,15}" />
+                   <div class="invalid-feedback">Please enter a valid phone number.</div>
+                   </div>
+                    <div class="col-md-6"> 
+                    <label class="form-label" for="bEventType">Event type</label>
+                     <select class="form-select" id="bEventType" name="bEventType" required>
+                       <option value="" disabled selected>Choose one</option> 
+                       <option>Wedding</option> 
+                       <option>Reception</option> 
+                       <option>Corporate Event</option> 
+                       <option>Other Celebration</option>
+                       </select> 
+
+
+     <div class="col-md-6"> 
+                    <label class="form-label" for="bShift">Select Shift</label>
+                     <select class="form-select" id="bShift" name="bShift" required>
+                       <option value="" disabled selected>Choose one</option> 
+                       <option value="">Select Shift</option>
+    <option value="Morning">Morning</option>
+    <option value="Evening">Evening</option>
+    <option value="Both">Full Day</option>
+                       </select> 
+                      </div>
+                       <div class="invalid-feedback">Please select an event type.</div>
+                       </div> 
+                       <div class="col-md-6"> 
+                        <label class="form-label" for="bDate">Selected date</label>
+                         <input type="text" class="form-control" id="bDate" name="bDate" readonly /> 
+                        </div> 
+                        <div class="col-12"> 
+                          <label class="form-label" for="bMessage">Message</label> 
+                          <textarea class="form-control" id="bMessage" name="bMessage" rows="3"></textarea>
+                         </div> 
+                        </div> 
+                         <div class="booking-actions"> <button type="submit" class="btn btn-orange" id="bookingSubmit">
+                           <span class="btn-label">Send enquiry</span>
+                           </button> 
+                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button> 
+                          </div>
+                         </form> 
+                           <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite" style="display: none;"> 
+                            <i class="bi bi-check-circle-fill"></i>
+                             <span>Thank you. We will contact you soon.</span> 
+                            </div> 
+                            <div class="booking-error" id="bookingError" role="status" aria-live="alert" style="display: none;"> 
+                             <i class="bi bi-x-circle-fill"></i> 
+                             <span>There was an error sending your enquiry. Please try again later.</span> 
+                            </div> 
+                          </div> 
+                        </div>
+                         </div> 
+                        </div>
+ 
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close" aria-label="Close lightbox">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <button class="lightbox__prev" aria-label="Previous image">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="lightbox__next" aria-label="Next image">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <div class="lightbox__stage">
+        <div class="lightbox__image" id="lightboxImage"></div>
+        <div class="lightbox__counter" id="lightboxCounter">1 / 8</div>
+      </div>
+    </div>
+
+    <a href="services.html#booking" class="floating-book d-lg-none" aria-label="Book now">
+      <i class="bi bi-calendar2-heart-fill"></i>
+      <span>Book</span>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>

@@ -95,16 +95,27 @@ img {
   align-items: center;
   gap: 12px;
 }
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.top-bar {
+    height: 40px;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
 
 .site-nav {
-  min-height: 53px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid rgba(0, 27, 114, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 1040;
-  transition: box-shadow 0.25s ease;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 27, 114, 0.08);
+    min-height: 53px;
+    position: relative; /* remove sticky/fixed here */
 }
 
 .site-nav.scrolled {
@@ -228,7 +239,7 @@ img {
 .about-title {
   margin: 0 0 18px;
   color: #30323a;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.22;
 }
@@ -251,15 +262,25 @@ img {
 }
 
 .about-photo {
-  width: 58%;
-  max-width: 700px;
-  overflow: hidden;
+          width: 67%;
+    max-width: 780px;
+    overflow: hidden;
 }
+
+
+@media (max-width: 1912px) {
+    .about-photo img {
+        width: calc(100% + 367px);
+        height: 54%;
+        object-fit: cover;
+        object-position: center 43%;
+    }
+  }
 
 @media screen and (min-width: 768px) {
   .about-photo img {
-    width: 77%;
-    height: 100%;
+        width: calc(100% + 367px);
+    /* height: 100% ; */
     object-fit: cover;
     object-position: center 43%;
   }
@@ -377,7 +398,7 @@ img {
 
 .amenity-text {
   display: inline-block;
-  background: #001f7a;
+  /* background: #001f7a; */
   padding: 0 10px;
   position: relative;
   z-index: 2;
@@ -389,7 +410,7 @@ img {
 }
 
 .video-wrapper {
-  width: calc(100% + 6px);
+      width: calc(100% + 367px);
   margin: 72px 0 -240px 0;
   border: 5px solid var(--white);
   border-bottom: 0;
@@ -495,7 +516,62 @@ img {
   background: var(--blue);
   color: var(--white);
 }
+.cal-day{
+    position: relative;
+    overflow: hidden;
+}
 
+/* Morning & Evening Default (Available) */
+.cal-day .morning,
+.cal-day .evening{
+    position: absolute;
+    inset: 0;
+    background: #f5f5f5; /* Available */
+}
+
+/* Morning Triangle (Top Left) */
+.cal-day .morning{
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Evening Triangle (Bottom Right) */
+.cal-day .evening{
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Day Number */
+.day-number{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 3;
+    font-weight: 700;
+    font-size: 15px;
+    color: #222;
+}
+
+
+
+/* BOOKED SLOT = GREEN */
+.slot.booked{
+    background: #28a745 !important;
+}
+
+/* Optional Hover */
+.cal-day:hover{
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+/* Selected Date */
+.cal-day--selected{
+    border: 2px solid #0d6efd !important;
+}
+
+/* Today */
+.cal-day--today{
+    box-shadow: inset 0 0 0 2px #ff9800;
+}
 .pill-heading {
   display: inline-flex;
   align-items: center;
@@ -564,7 +640,7 @@ img {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 42px;
+  grid-auto-rows: 60px;
 }
 
 .cal-day {
@@ -689,8 +765,8 @@ img {
 .gallery-image--3 { background-image: url("../images/garden-carousel-1.png"); }
 .gallery-image--4 { background-image: url("../images/garden-carousel-3.png"); }
 .gallery-image--5 { background-image: url("../images/garden-view.jpg"); }
-.gallery-image--6 { background-image: url("../images/main-hall-3.jpg"); }
-.gallery-image--7 { background-image: url("../images/main-hall.jpg"); }
+.gallery-image--6 { background-image: url("../images/corporate-events.jpg"); }
+.gallery-image--7 { background-image: url("../images/wedding-cermony.jpg"); }
 .gallery-image--8 { background-image: url("../images/video-thumbnail.png"); }
 
 .description-section {
@@ -728,7 +804,7 @@ img {
 .subpage-hero__content {
   width: min(100%, 980px);
   margin: 0 auto;
-  padding: 82px 18px 54px;
+  padding: 218px 18px 54px;
   overflow-wrap: break-word;
 }
 
@@ -748,7 +824,7 @@ img {
   max-width: 610px;
   margin: 0;
   color: rgba(255, 255, 255, 0.86);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
@@ -770,7 +846,7 @@ img {
 .split-copy p {
   margin: 0 0 14px;
   color: #454b5a;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.7;
 }
 
@@ -1244,7 +1320,7 @@ img {
 .visit-card p {
   margin: 0;
   color: #4e5462;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
@@ -1283,6 +1359,26 @@ img {
   z-index: 2;
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 1912px) {
+  .bottom-content {
+  min-height: 318px;
+  position: relative;
+  z-index: 2;
+  left:-70px;
+}
+
+}
+.map-panel {
+    z-index: 999;
+}
+
+.map-panel iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+
 .mini-label {
   display: inline-block;
   margin-bottom: 9px;
@@ -1290,7 +1386,7 @@ img {
   border-radius: 2px;
   background: var(--orange);
   color: var(--white);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -1344,7 +1440,7 @@ img {
 }
 
 .contact-card {
-  width: 250px;
+ width: 317px;
   min-height: 220px;
   margin-left: -307px;
   padding: 28px 25px;
@@ -1377,7 +1473,7 @@ img {
   align-items: flex-start;
   gap: 9px;
   margin-bottom: 11px;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -1407,7 +1503,7 @@ img {
   min-height: 28px;
   background: #efe8d7;
   color: #565b66;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .site-footer .site-container {
@@ -2033,9 +2129,11 @@ img {
 
   .description-section p,
   .description-section strong {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.55;
+  
   }
+
 
   /* ---------- Subpage hero ---------- */
   .subpage-hero {
@@ -2043,7 +2141,7 @@ img {
   }
 
   .subpage-hero__content {
-    padding: 64px 18px 38px;
+    padding: 143px 18px 38px;
   }
 
   .subpage-hero h1 {
