@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = htmlspecialchars(trim($_POST["bPhone"]));
     $eventType = htmlspecialchars(trim($_POST["bEventType"]));
     $date = htmlspecialchars(trim($_POST["bDate"]));
+    $shift = htmlspecialchars(trim($_POST["bShift"]));
     $message = htmlspecialchars(trim($_POST["bMessage"]));
 
     $to = "contact@sainigardens.com"; // Replace with the actual recipient email address
@@ -19,7 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><strong>Name:</strong> {$name}</p>
         <p><strong>Phone:</strong> {$phone}</p>
         <p><strong>Event Type:</strong> {$eventType}</p>
-        <p><strong>Selected Date:</strong> {$date}</p>
+   <p><strong>Selected Date:</strong> {$date}</p>
+<p><strong>Selected Shift:</strong> {$shift}</p>
+
         <p><strong>Message:</strong><br/>{$message}</p>
     </body>
     </html>

@@ -146,7 +146,6 @@
     $$(".reveal").forEach((element) => element.classList.add("in-view"));
   }
 
-
   /* ==============================
      BOOKING CALENDAR
   ============================== */
@@ -158,7 +157,11 @@
 
   let viewDate = new Date(2026, 2, 1);
   let selectedDateISO = null;
-
+const bookedSlots = {
+    "2026-03-10": ["morning"],
+    "2026-03-15": ["evening"],
+    "2026-03-20": ["morning", "evening"]
+};
   function buildCalendar() {
     if (!calendarGrid || !calMonthEl || !calYearEl) return;
 
@@ -185,46 +188,67 @@
 
       const iso = toISO(cellDate);
       const cell = document.createElement("button");
-      
       cell.type = "button";
       cell.className = "cal-day";
+
+
+
       // cell.textContent = day;
 cell.innerHTML = `
-  <div class="slot morning"></div>
-  <div class="slot evening"></div>
-  <span class="day-number">${day}</span>
+    <div class="slot morning"></div>
+    <div class="slot evening"></div>
+    <span class="day-number">${day}</span>
+    <span class="slot-label"></span>
 `;
 
-
-const bookedSlots = {
-    "2026-03-10": ["morning"],
-    "2026-03-15": ["evening"],
-    "2026-03-20": ["morning","evening"]
-};
-const daySlots = bookedSlots[iso] || [];
-
-if (daySlots.includes("morning")) {
-    cell.querySelector(".morning").classList.add("booked");
-}
-
-if (daySlots.includes("evening")) {
-    cell.querySelector(".evening").classList.add("booked");
-}
       cell.setAttribute("role", "gridcell");
       cell.setAttribute("data-date", iso);
 
       const isToday = cellDate.getTime() === today.getTime();
-      const isBooked = bookedDates.includes(iso);
+      // const isBooked = bookedDates.includes(iso);
+cell.setAttribute("data-date", iso);
 
-      if (isBooked) {
-        cell.classList.add("cal-day--booked");
-        cell.disabled = true;
-        cell.setAttribute("aria-label", `${iso} already booked`);
-      } else {
-        cell.classList.add("cal-day--available");
-        cell.setAttribute("aria-label", `${iso} available to book`);
-        cell.addEventListener("click", () => selectDate(cell, iso));
-      }
+
+
+const daySlots = bookedSlots[iso] || [];
+
+const morningBooked = daySlots.includes("morning");
+const eveningBooked = daySlots.includes("evening");
+
+const label = cell.querySelector(".slot-label");
+
+if (morningBooked && !eveningBooked) {
+    label.textContent = "Evening Slot Available";
+}
+
+else if (!morningBooked && eveningBooked) {
+    label.textContent = "Morning Slot Available";
+}
+
+else {
+    label.textContent = "";
+}
+
+if (morningBooked) {
+    cell.querySelector(".morning").classList.add("booked");
+}
+
+if (eveningBooked) {
+    cell.querySelector(".evening").classList.add("booked");
+}
+
+
+     if (morningBooked && eveningBooked) {
+
+    cell.classList.add("cal-day--booked");
+    cell.disabled = true;
+
+} else {
+
+    cell.classList.add("cal-day--available");
+    cell.addEventListener("click", () => selectDate(cell, iso));
+
+}
 
       if (isToday) cell.classList.add("cal-day--today");
       if (iso === selectedDateISO) cell.classList.add("cal-day--selected");
@@ -233,7 +257,8 @@ if (daySlots.includes("evening")) {
     }
   }
 
-  function selectDate(cell, iso) {
+ function selectDate(cell, iso) {
+
     if (!calendarGrid) return;
 
     $$(".cal-day--selected", calendarGrid).forEach((selected) =>
@@ -244,25 +269,39 @@ if (daySlots.includes("evening")) {
 console.log("Date clicked:", iso);
 
 
-function updateShiftAvailability(selectedDate) {
-    console.log("updateShiftAvailability called:", selectedDate);
+const shiftSelect = document.getElementById("bShift");
 
-    const shiftSelect = document.getElementById("bShift");
-    console.log("Shift Select:", shiftSelect);
+if (shiftSelect) {
 
-    if (!shiftSelect) return;
+    const daySlots = bookedSlots[iso] || [];
 
-   const bookedSlots = {
-        "2026-07-13": ["Morning"],
-        "2026-07-14": ["Evening"],
-        "2026-07-15": ["Both"]
-    };
+    const morningBooked = daySlots.includes("morning");
+    const eveningBooked = daySlots.includes("evening");
 
-    console.log("Booked Slots:", bookedSlots[selectedDate]);
+    // Morning already booked
+    if (morningBooked && !eveningBooked) {
 
+        shiftSelect.value = "Evening";
+        shiftSelect.disabled = true;
+
+    }
+
+    // Evening already booked
+    else if (!morningBooked && eveningBooked) {
+
+        shiftSelect.value = "Morning";
+        shiftSelect.disabled = true;
+
+    }
+
+    // Both available
+    else {
+
+        shiftSelect.value = "";
+        shiftSelect.disabled = false;
+
+    }
 }
-
-updateShiftAvailability(iso);
 
     const dateInput = $("#bDate");
     if (dateInput) {
@@ -279,6 +318,8 @@ updateShiftAvailability(iso);
     }
   }
 
+
+  
   function changeMonth(delta) {
     viewDate.setMonth(viewDate.getMonth() + delta);
     buildCalendar();
@@ -357,6 +398,7 @@ updateShiftAvailability(iso);
     videoModal.addEventListener("show.bs.modal", () => { videoFrame.src = VIDEO_URL; });
     videoModal.addEventListener("hidden.bs.modal", () => { videoFrame.src = ""; });
   }
+
   /* ==============================
      LIGHTBOX GALLERY
   ============================== */
@@ -429,5 +471,3 @@ updateShiftAvailability(iso);
 
   onScroll();
 })();
-
-

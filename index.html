@@ -280,6 +280,114 @@
           <strong>Saini Gardens - Hasanparthy, Hanamkonda</strong>
         </div>
       </section>
+ <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="videoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content video-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="videoModalLabel">Saini Gardens Venue Tour</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="videoFrame"
+                src=""
+                title="Saini Gardens Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+ <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true" >
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+     <div class="modal-content booking-modal"> 
+      <div class="modal-header">
+         <h3 class="modal-title" id="bookingModalLabel">Reserve your date</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button> 
+        </div> 
+        <div class="modal-body">
+           <form id="bookingForm" action="send_email.php" method="POST"> 
+            <div class="row g-3"> <div class="col-md-6">
+               <label class="form-label" for="bName">Full name</label>
+                <input type="text" class="form-control" id="bName" name="bName" required minlength="2" /> 
+                <div class="invalid-feedback">Please enter your full name.</div> 
+              </div> 
+              <div class="col-md-6">
+                 <label class="form-label" for="bPhone" max-length="10">Phone</label>
+                  <input type="tel" class="form-control" id="bPhone" name="bPhone" required pattern="[0-9+\s\-]{10,15}" />
+                   <div class="invalid-feedback">Please enter a valid phone number.</div>
+                   </div>
+                    <div class="col-md-6"> 
+                    <label class="form-label" for="bEventType">Event type</label>
+                     <select class="form-select" id="bEventType" name="bEventType" required>
+                       <option value="" disabled selected>Choose one</option> 
+                       <option>Wedding</option> 
+                       <option>Reception</option> 
+                       <option>Corporate Event</option> 
+                       <option>Other Celebration</option>
+                       </select> 
+
+
+     <div class="col-md-6"> 
+                    <label class="form-label" for="bShift">Select Shift</label>
+                     <select class="form-select" id="bShift" name="bShift" required>
+                       <option value="" disabled selected>Choose one</option> 
+                       <option value="">Select Shift</option>
+    <option value="Morning">Morning</option>
+    <option value="Evening">Evening</option>
+    <option value="Both">Full Day</option>
+                       </select> 
+                      </div>
+                       <div class="invalid-feedback">Please select an event type.</div>
+                       </div> 
+                       <div class="col-md-6"> 
+                        <label class="form-label" for="bDate">Selected date</label>
+                         <input type="text" class="form-control" id="bDate" name="bDate" readonly /> 
+                        </div> 
+                        <div class="col-12"> 
+                          <label class="form-label" for="bMessage">Message</label> 
+                          <textarea class="form-control" id="bMessage" name="bMessage" rows="3"></textarea>
+                         </div> 
+                        </div> 
+                         <div class="booking-actions"> <button type="submit" class="btn btn-orange" id="bookingSubmit">
+                           <span class="btn-label">Send enquiry</span>
+                           </button> 
+                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button> 
+                          </div>
+                         </form> 
+                           <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite" style="display: none;"> 
+                            <i class="bi bi-check-circle-fill"></i>
+                             <span>Thank you. We will contact you soon.</span> 
+                            </div> 
+                            <div class="booking-error" id="bookingError" role="status" aria-live="alert" style="display: none;"> 
+                             <i class="bi bi-x-circle-fill"></i> 
+                             <span>There was an error sending your enquiry. Please try again later.</span> 
+                            </div> 
+                          </div> 
+                        </div>
+                         </div> 
+                        </div>
+
+
+
+
 
         <div id="footer"></div>
 
