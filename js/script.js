@@ -155,13 +155,21 @@
   const prevBtn = $("#prevMonth");
   const nextBtn = $("#nextMonth");
 
-  let viewDate = new Date(2026, 2, 1);
-  let selectedDateISO = null;
-const bookedSlots = {
-    "2026-03-10": ["morning"],
-    "2026-03-15": ["evening"],
-    "2026-03-20": ["morning", "evening"]
-};
+//   let viewDate = new Date(2026, 2, 1);
+//   let selectedDateISO = null;
+// const bookedSlots = {
+//     "2026-03-10": ["morning"],
+//     "2026-03-15": ["evening"],
+//     "2026-03-20": ["morning", "evening"]
+// };
+
+	let viewDate = new Date();
+	let selectedDateISO = null;
+	const bookedSlots = {
+		"2026-06-10": ["morning"],
+		"2026-06-15": ["evening"],
+		"2026-06-20": ["morning", "evening"]
+	};
   function buildCalendar() {
     if (!calendarGrid || !calMonthEl || !calYearEl) return;
 
@@ -238,17 +246,30 @@ if (eveningBooked) {
 }
 
 
-     if (morningBooked && eveningBooked) {
+//      if (morningBooked && eveningBooked) {
 
-    cell.classList.add("cal-day--booked");
-    cell.disabled = true;
+//     cell.classList.add("cal-day--booked");
+//     cell.disabled = true;
 
-} else {
+// } else {
 
-    cell.classList.add("cal-day--available");
-    cell.addEventListener("click", () => selectDate(cell, iso));
+//     cell.classList.add("cal-day--available");
+//     cell.addEventListener("click", () => selectDate(cell, iso));
 
-}
+// }	const isPast = cellDate < today;
+
+			if (isPast) {
+				cell.classList.add("cal-day--past");   // ash/gray styling
+				cell.disabled = true;
+
+			} else if (morningBooked && eveningBooked) {
+				cell.classList.add("cal-day--booked");
+				cell.disabled = true;
+
+			} else {
+				cell.classList.add("cal-day--available");
+				cell.addEventListener("click", () => selectDate(cell, iso));
+			}
 
       if (isToday) cell.classList.add("cal-day--today");
       if (iso === selectedDateISO) cell.classList.add("cal-day--selected");
@@ -320,10 +341,25 @@ if (shiftSelect) {
 
 
   
+  // function changeMonth(delta) {
+  //   viewDate.setMonth(viewDate.getMonth() + delta);
+  //   buildCalendar();
+  // }
+
   function changeMonth(delta) {
-    viewDate.setMonth(viewDate.getMonth() + delta);
-    buildCalendar();
-  }
+		const proposed = new Date(viewDate);
+		proposed.setMonth(proposed.getMonth() + delta);
+
+		const now = new Date();
+		// ✅ Don't allow going before current month
+		if (proposed.getFullYear() < now.getFullYear() ||
+			(proposed.getFullYear() === now.getFullYear() && proposed.getMonth() < now.getMonth())) {
+			return;
+		}
+
+		viewDate.setMonth(viewDate.getMonth() + delta);
+		buildCalendar();
+	}
 
   if (prevBtn) prevBtn.addEventListener("click", () => changeMonth(-1));
   if (nextBtn) nextBtn.addEventListener("click", () => changeMonth(1));
