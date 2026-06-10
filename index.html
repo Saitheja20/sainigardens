@@ -344,6 +344,7 @@
 		<div id="footer"></div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
 	$(function () {
@@ -379,12 +380,22 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
         const result = await response.json();
         if (result.status === "success") {
-            alert("Enquiry sent successfully!");
+           Swal.fire({
+    icon: "success",
+    title: "Success!",
+    text: "Enquiry sent successfully.",
+    confirmButtonText: "OK"
+});
             document.getElementById("bookingForm").reset();
         }
     } catch(error) {
         console.error(error);
-        alert("Error submitting form");
+     Swal.fire({
+    icon: "error",
+    title: "Submission Failed",
+    text: "Error submitting form. Please try again.",
+    confirmButtonText: "OK"
+});
     }
 });
 

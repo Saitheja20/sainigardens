@@ -692,7 +692,7 @@ img {
 
 .cal-day--booked {
   background: #f9e2e2;
-  color: #a93131;
+  color: #ef5c23ad;
   cursor: not-allowed;
 }
 
@@ -721,7 +721,7 @@ img {
 }
 
 .slot.booked{
-    background:#ce1b1b !important;
+    background:#ef5c23ad !important;
 }
 
 .day-number{
@@ -2065,10 +2065,12 @@ img {
   .btn-orange {
     font-size: 14px;
     padding: 12px 22px;
+    
   }
 
   .btn-small {
     font-size: 14px;
+    display: inherit;
   }
 
   /* ---------- Hero ---------- */
