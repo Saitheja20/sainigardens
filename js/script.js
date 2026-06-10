@@ -149,221 +149,215 @@
   /* ==============================
      BOOKING CALENDAR
   ============================== */
-  const calendarGrid = $("#calendarGrid");
-  const calMonthEl = $("#calMonth");
-  const calYearEl = $("#calYear");
-  const prevBtn = $("#prevMonth");
-  const nextBtn = $("#nextMonth");
+ /* ==============================
+   BOOKING CALENDAR
+============================== */
+const calendarGrid = $("#calendarGrid");
+const calMonthEl = $("#calMonth");
+const calYearEl = $("#calYear");
+const prevBtn = $("#prevMonth");
+const nextBtn = $("#nextMonth");
 
-//   let viewDate = new Date(2026, 2, 1);
-//   let selectedDateISO = null;
-// const bookedSlots = {
-//     "2026-03-10": ["morning"],
-//     "2026-03-15": ["evening"],
-//     "2026-03-20": ["morning", "evening"]
-// };
+let viewDate = new Date();
+let selectedDateISO = null;
 
-	let viewDate = new Date();
-	let selectedDateISO = null;
-	const bookedSlots = {
-		"2026-06-10": ["morning"],
-		"2026-06-15": ["evening"],
-		"2026-06-20": ["morning", "evening"]
-	};
-  function buildCalendar() {
+const bookedSlots = {
+    "2026-06-10": ["morning"],
+    "2026-06-15": ["evening"],
+    "2026-06-20": ["morning", "evening"]
+};
+
+function buildCalendar() {
+
     if (!calendarGrid || !calMonthEl || !calYearEl) return;
 
     const year = viewDate.getFullYear();
     const month = viewDate.getMonth();
+
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     calMonthEl.textContent = MONTH_NAMES[month];
     calYearEl.textContent = year;
+
     calendarGrid.innerHTML = "";
 
-    for (let index = 0; index < firstDay; index += 1) {
-      const empty = document.createElement("div");
-      empty.className = "cal-day cal-day--empty";
-      calendarGrid.appendChild(empty);
+    for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement("div");
+        empty.className = "cal-day cal-day--empty";
+        calendarGrid.appendChild(empty);
     }
 
-    for (let day = 1; day <= daysInMonth; day += 1) {
-      const cellDate = new Date(year, month, day);
-      cellDate.setHours(0, 0, 0, 0);
+    for (let day = 1; day <= daysInMonth; day++) {
 
-      const iso = toISO(cellDate);
-      const cell = document.createElement("button");
-      cell.type = "button";
-      cell.className = "cal-day";
+        const cellDate = new Date(year, month, day);
+        cellDate.setHours(0, 0, 0, 0);
 
+        const iso = toISO(cellDate);
 
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "cal-day";
 
-      // cell.textContent = day;
-cell.innerHTML = `
-    <div class="slot morning"></div>
-    <div class="slot evening"></div>
-    <span class="day-number">${day}</span>
-    <span class="slot-label"></span>
-`;
+        cell.innerHTML = `
+            <div class="slot morning"></div>
+            <div class="slot evening"></div>
+            <span class="day-number">${day}</span>
+            <span class="slot-label"></span>
+        `;
 
-      cell.setAttribute("role", "gridcell");
-      cell.setAttribute("data-date", iso);
+        cell.setAttribute("role", "gridcell");
+        cell.dataset.date = iso;
 
-      const isToday = cellDate.getTime() === today.getTime();
-      // const isBooked = bookedDates.includes(iso);
-cell.setAttribute("data-date", iso);
+        const isToday = cellDate.getTime() === today.getTime();
+        const isPast = cellDate < today;
 
+        const daySlots = bookedSlots[iso] || [];
 
+        const morningBooked = daySlots.includes("morning");
+        const eveningBooked = daySlots.includes("evening");
 
-const daySlots = bookedSlots[iso] || [];
+        const label = cell.querySelector(".slot-label");
 
-const morningBooked = daySlots.includes("morning");
-const eveningBooked = daySlots.includes("evening");
+        if (morningBooked && !eveningBooked) {
+            label.textContent = "Evening Slot Available";
+        } else if (!morningBooked && eveningBooked) {
+            label.textContent = "Morning Slot Available";
+        } else {
+            label.textContent = "";
+        }
 
-const label = cell.querySelector(".slot-label");
+        if (morningBooked) {
+            cell.querySelector(".morning").classList.add("booked");
+        }
 
-if (morningBooked && !eveningBooked) {
-    label.textContent = "Evening Slot Available";
-}
+        if (eveningBooked) {
+            cell.querySelector(".evening").classList.add("booked");
+        }
 
-else if (!morningBooked && eveningBooked) {
-    label.textContent = "Morning Slot Available";
-}
+        if (isPast) {
 
-else {
-    label.textContent = "";
-}
+            cell.classList.add("cal-day--past");
+            cell.disabled = true;
 
-if (morningBooked) {
-    cell.querySelector(".morning").classList.add("booked");
-}
+        } else if (morningBooked && eveningBooked) {
 
-if (eveningBooked) {
-    cell.querySelector(".evening").classList.add("booked");
-}
+            cell.classList.add("cal-day--booked");
+            cell.disabled = true;
 
+        } else {
 
-//      if (morningBooked && eveningBooked) {
+            cell.classList.add("cal-day--available");
+            cell.addEventListener("click", () => {
+                selectDate(cell, iso);
+            });
 
-//     cell.classList.add("cal-day--booked");
-//     cell.disabled = true;
+        }
 
-// } else {
+        if (isToday) {
+            cell.classList.add("cal-day--today");
+        }
 
-//     cell.classList.add("cal-day--available");
-//     cell.addEventListener("click", () => selectDate(cell, iso));
+        if (iso === selectedDateISO) {
+            cell.classList.add("cal-day--selected");
+        }
 
-// }	const isPast = cellDate < today;
-
-			if (isPast) {
-				cell.classList.add("cal-day--past");   // ash/gray styling
-				cell.disabled = true;
-
-			} else if (morningBooked && eveningBooked) {
-				cell.classList.add("cal-day--booked");
-				cell.disabled = true;
-
-			} else {
-				cell.classList.add("cal-day--available");
-				cell.addEventListener("click", () => selectDate(cell, iso));
-			}
-
-      if (isToday) cell.classList.add("cal-day--today");
-      if (iso === selectedDateISO) cell.classList.add("cal-day--selected");
-
-      calendarGrid.appendChild(cell);
+        calendarGrid.appendChild(cell);
     }
-  }
+}
 
- function selectDate(cell, iso) {
+function selectDate(cell, iso) {
 
-    if (!calendarGrid) return;
+    $$(".cal-day--selected", calendarGrid).forEach((selected) => {
+        selected.classList.remove("cal-day--selected");
+    });
 
-    $$(".cal-day--selected", calendarGrid).forEach((selected) =>
-      selected.classList.remove("cal-day--selected")
-    );
     cell.classList.add("cal-day--selected");
     selectedDateISO = iso;
-console.log("Date clicked:", iso);
 
+    const shiftSelect = document.getElementById("bShift");
 
-const shiftSelect = document.getElementById("bShift");
+    if (shiftSelect) {
 
-if (shiftSelect) {
+        const daySlots = bookedSlots[iso] || [];
 
-    const daySlots = bookedSlots[iso] || [];
+        const morningBooked = daySlots.includes("morning");
+        const eveningBooked = daySlots.includes("evening");
 
-    const morningBooked = daySlots.includes("morning");
-    const eveningBooked = daySlots.includes("evening");
+        if (morningBooked && !eveningBooked) {
 
-    // Morning already booked
-    if (morningBooked && !eveningBooked) {
+            shiftSelect.value = "Evening";
+            shiftSelect.disabled = true;
 
-        shiftSelect.value = "Evening";
-        shiftSelect.disabled = true;
+        } else if (!morningBooked && eveningBooked) {
 
+            shiftSelect.value = "Morning";
+            shiftSelect.disabled = true;
+
+        } else {
+
+            shiftSelect.value = "";
+            shiftSelect.disabled = false;
+
+        }
     }
-
-    // Evening already booked
-    else if (!morningBooked && eveningBooked) {
-
-        shiftSelect.value = "Morning";
-        shiftSelect.disabled = true;
-
-    }
-
-    // Both available
-    else {
-
-        shiftSelect.value = "";
-        shiftSelect.disabled = false;
-
-    }
-}
 
     const dateInput = $("#bDate");
+
     if (dateInput) {
-      const selected = new Date(iso);
-      dateInput.value = selected.toLocaleDateString("en-IN", {
-        weekday: "long", day: "numeric", month: "long", year: "numeric",
-      });
-      dateInput.dataset.iso = iso;
+
+        const selected = new Date(iso);
+
+        dateInput.value = selected.toLocaleDateString("en-IN", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+
+        dateInput.dataset.iso = iso;
     }
 
     const modalEl = $("#bookingModal");
+
     if (modalEl && window.bootstrap) {
-      bootstrap.Modal.getOrCreateInstance(modalEl).show();
+        bootstrap.Modal.getOrCreateInstance(modalEl).show();
     }
-  }
+}
 
+function changeMonth(delta) {
 
-  
-  // function changeMonth(delta) {
-  //   viewDate.setMonth(viewDate.getMonth() + delta);
-  //   buildCalendar();
-  // }
+    const proposed = new Date(viewDate);
+    proposed.setMonth(proposed.getMonth() + delta);
 
-  function changeMonth(delta) {
-		const proposed = new Date(viewDate);
-		proposed.setMonth(proposed.getMonth() + delta);
+    const now = new Date();
 
-		const now = new Date();
-		// ✅ Don't allow going before current month
-		if (proposed.getFullYear() < now.getFullYear() ||
-			(proposed.getFullYear() === now.getFullYear() && proposed.getMonth() < now.getMonth())) {
-			return;
-		}
+    if (
+        proposed.getFullYear() < now.getFullYear() ||
+        (
+            proposed.getFullYear() === now.getFullYear() &&
+            proposed.getMonth() < now.getMonth()
+        )
+    ) {
+        return;
+    }
 
-		viewDate.setMonth(viewDate.getMonth() + delta);
-		buildCalendar();
-	}
+    viewDate.setMonth(viewDate.getMonth() + delta);
+    buildCalendar();
+}
 
-  if (prevBtn) prevBtn.addEventListener("click", () => changeMonth(-1));
-  if (nextBtn) nextBtn.addEventListener("click", () => changeMonth(1));
-  buildCalendar();
+if (prevBtn) {
+    prevBtn.addEventListener("click", () => changeMonth(-1));
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener("click", () => changeMonth(1));
+}
+
+buildCalendar();
 
    /* ==============================
       BOOKING FORM - (Now handled by PHP)
